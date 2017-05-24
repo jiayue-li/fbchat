@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CFD503251ED6038B00BCD1F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503241ED6038B00BCD1F0 /* AppDelegate.swift */; };
+		CFD503271ED6038B00BCD1F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503261ED6038B00BCD1F0 /* ViewController.swift */; };
+		CFD5032A1ED6038B00BCD1F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD503281ED6038B00BCD1F0 /* Main.storyboard */; };
+		CFD5032C1ED6038B00BCD1F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFD5032B1ED6038B00BCD1F0 /* Assets.xcassets */; };
+		CFD5032F1ED6038B00BCD1F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD5032D1ED6038B00BCD1F0 /* LaunchScreen.storyboard */; };
+		CFD5033A1ED6038B00BCD1F0 /* fbchatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503391ED6038B00BCD1F0 /* fbchatTests.swift */; };
+		CFD503451ED6038B00BCD1F0 /* fbchatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503441ED6038B00BCD1F0 /* fbchatUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFD503361ED6038B00BCD1F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFD503191ED6038B00BCD1F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFD503201ED6038B00BCD1F0;
+			remoteInfo = fbchat;
+		};
+		CFD503411ED6038B00BCD1F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFD503191ED6038B00BCD1F0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFD503201ED6038B00BCD1F0;
+			remoteInfo = fbchat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CFD503211ED6038B00BCD1F0 /* fbchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fbchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFD503241ED6038B00BCD1F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CFD503261ED6038B00BCD1F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CFD503291ED6038B00BCD1F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CFD5032B1ED6038B00BCD1F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CFD5032E1ED6038B00BCD1F0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CFD503301ED6038B00BCD1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFD503351ED6038B00BCD1F0 /* fbchatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fbchatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFD503391ED6038B00BCD1F0 /* fbchatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fbchatTests.swift; sourceTree = "<group>"; };
+		CFD5033B1ED6038B00BCD1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFD503401ED6038B00BCD1F0 /* fbchatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fbchatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFD503441ED6038B00BCD1F0 /* fbchatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fbchatUITests.swift; sourceTree = "<group>"; };
+		CFD503461ED6038B00BCD1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CFD5031E1ED6038B00BCD1F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD503321ED6038B00BCD1F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD5033D1ED6038B00BCD1F0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CFD503181ED6038B00BCD1F0 = {
+			isa = PBXGroup;
+			children = (
+				CFD503231ED6038B00BCD1F0 /* fbchat */,
+				CFD503381ED6038B00BCD1F0 /* fbchatTests */,
+				CFD503431ED6038B00BCD1F0 /* fbchatUITests */,
+				CFD503221ED6038B00BCD1F0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CFD503221ED6038B00BCD1F0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFD503211ED6038B00BCD1F0 /* fbchat.app */,
+				CFD503351ED6038B00BCD1F0 /* fbchatTests.xctest */,
+				CFD503401ED6038B00BCD1F0 /* fbchatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFD503231ED6038B00BCD1F0 /* fbchat */ = {
+			isa = PBXGroup;
+			children = (
+				CFD503241ED6038B00BCD1F0 /* AppDelegate.swift */,
+				CFD503261ED6038B00BCD1F0 /* ViewController.swift */,
+				CFD503281ED6038B00BCD1F0 /* Main.storyboard */,
+				CFD5032B1ED6038B00BCD1F0 /* Assets.xcassets */,
+				CFD5032D1ED6038B00BCD1F0 /* LaunchScreen.storyboard */,
+				CFD503301ED6038B00BCD1F0 /* Info.plist */,
+			);
+			path = fbchat;
+			sourceTree = "<group>";
+		};
+		CFD503381ED6038B00BCD1F0 /* fbchatTests */ = {
+			isa = PBXGroup;
+			children = (
+				CFD503391ED6038B00BCD1F0 /* fbchatTests.swift */,
+				CFD5033B1ED6038B00BCD1F0 /* Info.plist */,
+			);
+			path = fbchatTests;
+			sourceTree = "<group>";
+		};
+		CFD503431ED6038B00BCD1F0 /* fbchatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CFD503441ED6038B00BCD1F0 /* fbchatUITests.swift */,
+				CFD503461ED6038B00BCD1F0 /* Info.plist */,
+			);
+			path = fbchatUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CFD503201ED6038B00BCD1F0 /* fbchat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFD503491ED6038B00BCD1F0 /* Build configuration list for PBXNativeTarget "fbchat" */;
+			buildPhases = (
+				CFD5031D1ED6038B00BCD1F0 /* Sources */,
+				CFD5031E1ED6038B00BCD1F0 /* Frameworks */,
+				CFD5031F1ED6038B00BCD1F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = fbchat;
+			productName = fbchat;
+			productReference = CFD503211ED6038B00BCD1F0 /* fbchat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CFD503341ED6038B00BCD1F0 /* fbchatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFD5034C1ED6038B00BCD1F0 /* Build configuration list for PBXNativeTarget "fbchatTests" */;
+			buildPhases = (
+				CFD503311ED6038B00BCD1F0 /* Sources */,
+				CFD503321ED6038B00BCD1F0 /* Frameworks */,
+				CFD503331ED6038B00BCD1F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFD503371ED6038B00BCD1F0 /* PBXTargetDependency */,
+			);
+			name = fbchatTests;
+			productName = fbchatTests;
+			productReference = CFD503351ED6038B00BCD1F0 /* fbchatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CFD5033F1ED6038B00BCD1F0 /* fbchatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CFD5034F1ED6038B00BCD1F0 /* Build configuration list for PBXNativeTarget "fbchatUITests" */;
+			buildPhases = (
+				CFD5033C1ED6038B00BCD1F0 /* Sources */,
+				CFD5033D1ED6038B00BCD1F0 /* Frameworks */,
+				CFD5033E1ED6038B00BCD1F0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFD503421ED6038B00BCD1F0 /* PBXTargetDependency */,
+			);
+			name = fbchatUITests;
+			productName = fbchatUITests;
+			productReference = CFD503401ED6038B00BCD1F0 /* fbchatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CFD503191ED6038B00BCD1F0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Jiayue Li";
+				TargetAttributes = {
+					CFD503201ED6038B00BCD1F0 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = DJW83MEF6R;
+						ProvisioningStyle = Automatic;
+					};
+					CFD503341ED6038B00BCD1F0 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = DJW83MEF6R;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CFD503201ED6038B00BCD1F0;
+					};
+					CFD5033F1ED6038B00BCD1F0 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = DJW83MEF6R;
+						ProvisioningStyle = Automatic;
+						TestTargetID = CFD503201ED6038B00BCD1F0;
+					};
+				};
+			};
+			buildConfigurationList = CFD5031C1ED6038B00BCD1F0 /* Build configuration list for PBXProject "fbchat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CFD503181ED6038B00BCD1F0;
+			productRefGroup = CFD503221ED6038B00BCD1F0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CFD503201ED6038B00BCD1F0 /* fbchat */,
+				CFD503341ED6038B00BCD1F0 /* fbchatTests */,
+				CFD5033F1ED6038B00BCD1F0 /* fbchatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CFD5031F1ED6038B00BCD1F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD5032F1ED6038B00BCD1F0 /* LaunchScreen.storyboard in Resources */,
+				CFD5032C1ED6038B00BCD1F0 /* Assets.xcassets in Resources */,
+				CFD5032A1ED6038B00BCD1F0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD503331ED6038B00BCD1F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD5033E1ED6038B00BCD1F0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CFD5031D1ED6038B00BCD1F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD503271ED6038B00BCD1F0 /* ViewController.swift in Sources */,
+				CFD503251ED6038B00BCD1F0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD503311ED6038B00BCD1F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD5033A1ED6038B00BCD1F0 /* fbchatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFD5033C1ED6038B00BCD1F0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD503451ED6038B00BCD1F0 /* fbchatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CFD503371ED6038B00BCD1F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFD503201ED6038B00BCD1F0 /* fbchat */;
+			targetProxy = CFD503361ED6038B00BCD1F0 /* PBXContainerItemProxy */;
+		};
+		CFD503421ED6038B00BCD1F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CFD503201ED6038B00BCD1F0 /* fbchat */;
+			targetProxy = CFD503411ED6038B00BCD1F0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CFD503281ED6038B00BCD1F0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFD503291ED6038B00BCD1F0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CFD5032D1ED6038B00BCD1F0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFD5032E1ED6038B00BCD1F0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CFD503471ED6038B00BCD1F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CFD503481ED6038B00BCD1F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CFD5034A1ED6038B00BCD1F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DJW83MEF6R;
+				INFOPLIST_FILE = fbchat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "asdfghjkl-.fbchat";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		CFD5034B1ED6038B00BCD1F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = DJW83MEF6R;
+				INFOPLIST_FILE = fbchat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "asdfghjkl-.fbchat";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		CFD5034D1ED6038B00BCD1F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = DJW83MEF6R;
+				INFOPLIST_FILE = fbchatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "asdfghjkl-.fbchatTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fbchat.app/fbchat";
+			};
+			name = Debug;
+		};
+		CFD5034E1ED6038B00BCD1F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = DJW83MEF6R;
+				INFOPLIST_FILE = fbchatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "asdfghjkl-.fbchatTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/fbchat.app/fbchat";
+			};
+			name = Release;
+		};
+		CFD503501ED6038B00BCD1F0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = DJW83MEF6R;
+				INFOPLIST_FILE = fbchatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "asdfghjkl-.fbchatUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = fbchat;
+			};
+			name = Debug;
+		};
+		CFD503511ED6038B00BCD1F0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = DJW83MEF6R;
+				INFOPLIST_FILE = fbchatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "asdfghjkl-.fbchatUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = fbchat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CFD5031C1ED6038B00BCD1F0 /* Build configuration list for PBXProject "fbchat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFD503471ED6038B00BCD1F0 /* Debug */,
+				CFD503481ED6038B00BCD1F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CFD503491ED6038B00BCD1F0 /* Build configuration list for PBXNativeTarget "fbchat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFD5034A1ED6038B00BCD1F0 /* Debug */,
+				CFD5034B1ED6038B00BCD1F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CFD5034C1ED6038B00BCD1F0 /* Build configuration list for PBXNativeTarget "fbchatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFD5034D1ED6038B00BCD1F0 /* Debug */,
+				CFD5034E1ED6038B00BCD1F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CFD5034F1ED6038B00BCD1F0 /* Build configuration list for PBXNativeTarget "fbchatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFD503501ED6038B00BCD1F0 /* Debug */,
+				CFD503511ED6038B00BCD1F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CFD503191ED6038B00BCD1F0 /* Project object */;
+}
