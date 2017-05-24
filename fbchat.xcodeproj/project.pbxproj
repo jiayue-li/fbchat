@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8471D49CF97BF51BE1C01E6 /* Pods_fbchatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B669B776C1D031C06A2FCB81 /* Pods_fbchatUITests.framework */; };
+		B89652DF37A1C2309683962F /* Pods_fbchatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAB7D4EE11484F9A5519AE8 /* Pods_fbchatTests.framework */; };
+		CFC08F461ED61E300089F984 /* Pods_fbchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC08F451ED61E300089F984 /* Pods_fbchat.framework */; };
+		CFC08F4B1ED61F020089F984 /* facebook-sdk-swift-0.2.0 in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC08F401ED61D690089F984 /* facebook-sdk-swift-0.2.0 */; };
 		CFD503251ED6038B00BCD1F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503241ED6038B00BCD1F0 /* AppDelegate.swift */; };
 		CFD503271ED6038B00BCD1F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503261ED6038B00BCD1F0 /* ViewController.swift */; };
 		CFD5032A1ED6038B00BCD1F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD503281ED6038B00BCD1F0 /* Main.storyboard */; };
@@ -14,6 +18,9 @@
 		CFD5032F1ED6038B00BCD1F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD5032D1ED6038B00BCD1F0 /* LaunchScreen.storyboard */; };
 		CFD5033A1ED6038B00BCD1F0 /* fbchatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503391ED6038B00BCD1F0 /* fbchatTests.swift */; };
 		CFD503451ED6038B00BCD1F0 /* fbchatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503441ED6038B00BCD1F0 /* fbchatUITests.swift */; };
+		CFD503551ED608ED00BCD1F0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503541ED608ED00BCD1F0 /* SignInViewController.swift */; };
+		CFD503591ED60D5A00BCD1F0 /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503581ED60D5A00BCD1F0 /* FriendsListViewController.swift */; };
+		CFD5035B1ED6120D00BCD1F0 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = CFD5035A1ED6120D00BCD1F0 /* GoogleService-Info (1).plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36255A42EB6D7A20E849A865 /* Pods-fbchatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbchatTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fbchatTests/Pods-fbchatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3D6C42621E792116DE25BBBE /* Pods-fbchat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbchat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fbchat/Pods-fbchat.debug.xcconfig"; sourceTree = "<group>"; };
+		53BBBA94CC697D9DA3462674 /* Pods-fbchatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbchatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fbchatTests/Pods-fbchatTests.release.xcconfig"; sourceTree = "<group>"; };
+		7945F386D92F5E6CBBCDC277 /* Pods-fbchat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbchat.release.xcconfig"; path = "Pods/Target Support Files/Pods-fbchat/Pods-fbchat.release.xcconfig"; sourceTree = "<group>"; };
+		85635D0C150F45A98D1524D4 /* Pods_fbchat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fbchat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93BAEA0BD27070316F488D5C /* Pods-fbchatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbchatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fbchatUITests/Pods-fbchatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9B71FC61023ECD1495D25653 /* Pods-fbchatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbchatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fbchatUITests/Pods-fbchatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9EAB7D4EE11484F9A5519AE8 /* Pods_fbchatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fbchatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B669B776C1D031C06A2FCB81 /* Pods_fbchatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fbchatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFC08F401ED61D690089F984 /* facebook-sdk-swift-0.2.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "facebook-sdk-swift-0.2.0"; path = "../../../Downloads/facebook-sdk-swift-0.2.0"; sourceTree = "<group>"; };
+		CFC08F431ED61DFA0089F984 /* FacebookLogin.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = FacebookLogin.xcconfig; path = "../../../Downloads/facebook-sdk-swift-0.2.0/Configurations/FacebookLogin.xcconfig"; sourceTree = "<group>"; };
+		CFC08F451ED61E300089F984 /* Pods_fbchat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_fbchat.framework; path = "Pods/../build/Debug-iphoneos/Pods_fbchat.framework"; sourceTree = "<group>"; };
+		CFC08F491ED61EDD0089F984 /* Login */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Login; path = "../../../Downloads/facebook-sdk-swift-0.2.0/Sources/Login"; sourceTree = "<group>"; };
 		CFD503211ED6038B00BCD1F0 /* fbchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fbchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD503241ED6038B00BCD1F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD503261ED6038B00BCD1F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +67,9 @@
 		CFD503401ED6038B00BCD1F0 /* fbchatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fbchatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD503441ED6038B00BCD1F0 /* fbchatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fbchatUITests.swift; sourceTree = "<group>"; };
 		CFD503461ED6038B00BCD1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFD503541ED608ED00BCD1F0 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		CFD503581ED60D5A00BCD1F0 /* FriendsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
+		CFD5035A1ED6120D00BCD1F0 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info (1).plist"; path = "../../../Downloads/GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC08F4B1ED61F020089F984 /* facebook-sdk-swift-0.2.0 in Frameworks */,
+				CFC08F461ED61E300089F984 /* Pods_fbchat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B89652DF37A1C2309683962F /* Pods_fbchatTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,19 +94,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8471D49CF97BF51BE1C01E6 /* Pods_fbchatUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		141E62E9A034D20082475E4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFC08F491ED61EDD0089F984 /* Login */,
+				CFC08F451ED61E300089F984 /* Pods_fbchat.framework */,
+				CFC08F431ED61DFA0089F984 /* FacebookLogin.xcconfig */,
+				CFC08F401ED61D690089F984 /* facebook-sdk-swift-0.2.0 */,
+				85635D0C150F45A98D1524D4 /* Pods_fbchat.framework */,
+				9EAB7D4EE11484F9A5519AE8 /* Pods_fbchatTests.framework */,
+				B669B776C1D031C06A2FCB81 /* Pods_fbchatUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7E8FD6BF70D6AA5B5B141B45 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3D6C42621E792116DE25BBBE /* Pods-fbchat.debug.xcconfig */,
+				7945F386D92F5E6CBBCDC277 /* Pods-fbchat.release.xcconfig */,
+				36255A42EB6D7A20E849A865 /* Pods-fbchatTests.debug.xcconfig */,
+				53BBBA94CC697D9DA3462674 /* Pods-fbchatTests.release.xcconfig */,
+				9B71FC61023ECD1495D25653 /* Pods-fbchatUITests.debug.xcconfig */,
+				93BAEA0BD27070316F488D5C /* Pods-fbchatUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		CFD503181ED6038B00BCD1F0 = {
 			isa = PBXGroup;
 			children = (
+				CFD5035A1ED6120D00BCD1F0 /* GoogleService-Info (1).plist */,
 				CFD503231ED6038B00BCD1F0 /* fbchat */,
 				CFD503381ED6038B00BCD1F0 /* fbchatTests */,
 				CFD503431ED6038B00BCD1F0 /* fbchatUITests */,
 				CFD503221ED6038B00BCD1F0 /* Products */,
+				7E8FD6BF70D6AA5B5B141B45 /* Pods */,
+				141E62E9A034D20082475E4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +160,8 @@
 				CFD5032B1ED6038B00BCD1F0 /* Assets.xcassets */,
 				CFD5032D1ED6038B00BCD1F0 /* LaunchScreen.storyboard */,
 				CFD503301ED6038B00BCD1F0 /* Info.plist */,
+				CFD503541ED608ED00BCD1F0 /* SignInViewController.swift */,
+				CFD503581ED60D5A00BCD1F0 /* FriendsListViewController.swift */,
 			);
 			path = fbchat;
 			sourceTree = "<group>";
@@ -132,9 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFD503491ED6038B00BCD1F0 /* Build configuration list for PBXNativeTarget "fbchat" */;
 			buildPhases = (
+				6CC5511673F1DAC6D7A097BC /* [CP] Check Pods Manifest.lock */,
 				CFD5031D1ED6038B00BCD1F0 /* Sources */,
 				CFD5031E1ED6038B00BCD1F0 /* Frameworks */,
 				CFD5031F1ED6038B00BCD1F0 /* Resources */,
+				422663DDBC422776B53A159F /* [CP] Embed Pods Frameworks */,
+				71D59D44863CEEF92559FFE1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFD5034C1ED6038B00BCD1F0 /* Build configuration list for PBXNativeTarget "fbchatTests" */;
 			buildPhases = (
+				646CCA6252A31D069916D301 /* [CP] Check Pods Manifest.lock */,
 				CFD503311ED6038B00BCD1F0 /* Sources */,
 				CFD503321ED6038B00BCD1F0 /* Frameworks */,
 				CFD503331ED6038B00BCD1F0 /* Resources */,
+				9F10F807034A88B1662ECDDB /* [CP] Embed Pods Frameworks */,
+				6F4A123E5C5101D898CDB6DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CFD5034F1ED6038B00BCD1F0 /* Build configuration list for PBXNativeTarget "fbchatUITests" */;
 			buildPhases = (
+				E41C1A5934ABE24C711DD06A /* [CP] Check Pods Manifest.lock */,
 				CFD5033C1ED6038B00BCD1F0 /* Sources */,
 				CFD5033D1ED6038B00BCD1F0 /* Frameworks */,
 				CFD5033E1ED6038B00BCD1F0 /* Resources */,
+				3AE74EB5CAE73DD077394BCA /* [CP] Embed Pods Frameworks */,
+				D9978ED68877B5CFF5B3B276 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,6 +306,7 @@
 				CFD5032F1ED6038B00BCD1F0 /* LaunchScreen.storyboard in Resources */,
 				CFD5032C1ED6038B00BCD1F0 /* Assets.xcassets in Resources */,
 				CFD5032A1ED6038B00BCD1F0 /* Main.storyboard in Resources */,
+				CFD5035B1ED6120D00BCD1F0 /* GoogleService-Info (1).plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,12 +326,152 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3AE74EB5CAE73DD077394BCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fbchatUITests/Pods-fbchatUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		422663DDBC422776B53A159F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fbchat/Pods-fbchat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		646CCA6252A31D069916D301 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6CC5511673F1DAC6D7A097BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6F4A123E5C5101D898CDB6DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fbchatTests/Pods-fbchatTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		71D59D44863CEEF92559FFE1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fbchat/Pods-fbchat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F10F807034A88B1662ECDDB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fbchatTests/Pods-fbchatTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9978ED68877B5CFF5B3B276 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fbchatUITests/Pods-fbchatUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E41C1A5934ABE24C711DD06A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CFD5031D1ED6038B00BCD1F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFD503591ED60D5A00BCD1F0 /* FriendsListViewController.swift in Sources */,
 				CFD503271ED6038B00BCD1F0 /* ViewController.swift in Sources */,
+				CFD503551ED608ED00BCD1F0 /* SignInViewController.swift in Sources */,
 				CFD503251ED6038B00BCD1F0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,9 +622,14 @@
 		};
 		CFD5034A1ED6038B00BCD1F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D6C42621E792116DE25BBBE /* Pods-fbchat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DJW83MEF6R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = fbchat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "asdfghjkl-.fbchat";
@@ -426,9 +640,14 @@
 		};
 		CFD5034B1ED6038B00BCD1F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7945F386D92F5E6CBBCDC277 /* Pods-fbchat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = DJW83MEF6R;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = fbchat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "asdfghjkl-.fbchat";
@@ -439,6 +658,7 @@
 		};
 		CFD5034D1ED6038B00BCD1F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36255A42EB6D7A20E849A865 /* Pods-fbchatTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,6 +674,7 @@
 		};
 		CFD5034E1ED6038B00BCD1F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53BBBA94CC697D9DA3462674 /* Pods-fbchatTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -469,6 +690,7 @@
 		};
 		CFD503501ED6038B00BCD1F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B71FC61023ECD1495D25653 /* Pods-fbchatUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = DJW83MEF6R;
@@ -483,6 +705,7 @@
 		};
 		CFD503511ED6038B00BCD1F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93BAEA0BD27070316F488D5C /* Pods-fbchatUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = DJW83MEF6R;
@@ -514,6 +737,7 @@
 				CFD5034B1ED6038B00BCD1F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFD5034C1ED6038B00BCD1F0 /* Build configuration list for PBXNativeTarget "fbchatTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +746,7 @@
 				CFD5034E1ED6038B00BCD1F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFD5034F1ED6038B00BCD1F0 /* Build configuration list for PBXNativeTarget "fbchatUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +755,7 @@
 				CFD503511ED6038B00BCD1F0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
