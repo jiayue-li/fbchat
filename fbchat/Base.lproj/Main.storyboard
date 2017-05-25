@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="SignInViewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -28,12 +28,20 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9W5-hs-Vka">
+                                <rect key="frame" x="164" y="461" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="RsE-6l-5pn" kind="show" identifier="segue2" id="Mkv-EG-LvH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1700754115" green="0.3979225575" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.31103757770000001" green="0.60747330759999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
-                        <segue destination="RsE-6l-5pn" kind="show" identifier="SignInToFriendsList" id="LCa-KL-Y4C"/>
+                        <segue destination="RsE-6l-5pn" kind="show" identifier="segue1" id="gUG-YZ-Ctj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -68,4 +76,7 @@
             <point key="canvasLocation" x="953" y="124"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Mkv-EG-LvH"/>
+    </inferredMetricsTieBreakers>
 </document>
