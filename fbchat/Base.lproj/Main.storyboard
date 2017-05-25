@@ -12,7 +12,7 @@
         <!--SignIn View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="SignIn View Controller" customClass="SignInViewController" customModule="fbchat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="BYZ-38-t0r" userLabel="SignIn View Controller" customClass="SignInViewController" customModule="fbchat" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,19 +21,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqy-ot-Zqh">
-                                <rect key="frame" x="94" y="333" width="186" height="51"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftS-g2-cyw">
-                                        <rect key="frame" x="70" y="13" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="facebookSIbutton"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.31103757770000001" green="0.60747330759999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="facebook chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76c-Zv-3Vb" userLabel="facebook chat label">
-                                <rect key="frame" x="94" y="202" width="186" height="78"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="facebook chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76c-Zv-3Vb" userLabel="facebook chat label">
+                                <rect key="frame" x="94" y="114" width="186" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="26"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -41,12 +31,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.1700754115" green="0.3979225575" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.31103757770000001" green="0.60747330759999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="qqy-ot-Zqh" firstAttribute="top" secondItem="76c-Zv-3Vb" secondAttribute="bottom" constant="30" id="93q-hC-4xR"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <segue destination="RsE-6l-5pn" kind="show" id="5wZ-9l-Joh"/>
+                        <segue destination="RsE-6l-5pn" kind="show" identifier="SignInToFriendsList" id="LCa-KL-Y4C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -78,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rn-DU-fIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773.60000000000002" y="123.68815592203899"/>
+            <point key="canvasLocation" x="953" y="124"/>
         </scene>
     </scenes>
 </document>

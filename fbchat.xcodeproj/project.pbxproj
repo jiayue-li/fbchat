@@ -11,6 +11,10 @@
 		B89652DF37A1C2309683962F /* Pods_fbchatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAB7D4EE11484F9A5519AE8 /* Pods_fbchatTests.framework */; };
 		CFC08F461ED61E300089F984 /* Pods_fbchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC08F451ED61E300089F984 /* Pods_fbchat.framework */; };
 		CFC08F4B1ED61F020089F984 /* facebook-sdk-swift-0.2.0 in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC08F401ED61D690089F984 /* facebook-sdk-swift-0.2.0 */; };
+		CFC08F4C1ED64BBD0089F984 /* Login in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC08F491ED61EDD0089F984 /* Login */; };
+		CFC627101ED697B3007509B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFC6270F1ED697B3007509B9 /* GoogleService-Info.plist */; };
+		CFC627111ED69A1B007509B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFC6270F1ED697B3007509B9 /* GoogleService-Info.plist */; };
+		CFC627121ED69A1C007509B9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CFC6270F1ED697B3007509B9 /* GoogleService-Info.plist */; };
 		CFD503251ED6038B00BCD1F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503241ED6038B00BCD1F0 /* AppDelegate.swift */; };
 		CFD503271ED6038B00BCD1F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503261ED6038B00BCD1F0 /* ViewController.swift */; };
 		CFD5032A1ED6038B00BCD1F0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFD503281ED6038B00BCD1F0 /* Main.storyboard */; };
@@ -20,7 +24,6 @@
 		CFD503451ED6038B00BCD1F0 /* fbchatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503441ED6038B00BCD1F0 /* fbchatUITests.swift */; };
 		CFD503551ED608ED00BCD1F0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503541ED608ED00BCD1F0 /* SignInViewController.swift */; };
 		CFD503591ED60D5A00BCD1F0 /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503581ED60D5A00BCD1F0 /* FriendsListViewController.swift */; };
-		CFD5035B1ED6120D00BCD1F0 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = CFD5035A1ED6120D00BCD1F0 /* GoogleService-Info (1).plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,7 @@
 		CFC08F431ED61DFA0089F984 /* FacebookLogin.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = FacebookLogin.xcconfig; path = "../../../Downloads/facebook-sdk-swift-0.2.0/Configurations/FacebookLogin.xcconfig"; sourceTree = "<group>"; };
 		CFC08F451ED61E300089F984 /* Pods_fbchat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_fbchat.framework; path = "Pods/../build/Debug-iphoneos/Pods_fbchat.framework"; sourceTree = "<group>"; };
 		CFC08F491ED61EDD0089F984 /* Login */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Login; path = "../../../Downloads/facebook-sdk-swift-0.2.0/Sources/Login"; sourceTree = "<group>"; };
+		CFC6270F1ED697B3007509B9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CFD503211ED6038B00BCD1F0 /* fbchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fbchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFD503241ED6038B00BCD1F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CFD503261ED6038B00BCD1F0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +73,6 @@
 		CFD503461ED6038B00BCD1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD503541ED608ED00BCD1F0 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CFD503581ED60D5A00BCD1F0 /* FriendsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
-		CFD5035A1ED6120D00BCD1F0 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info (1).plist"; path = "../../../Downloads/GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC08F4C1ED64BBD0089F984 /* Login in Frameworks */,
 				CFC08F4B1ED61F020089F984 /* facebook-sdk-swift-0.2.0 in Frameworks */,
 				CFC08F461ED61E300089F984 /* Pods_fbchat.framework in Frameworks */,
 			);
@@ -131,7 +135,7 @@
 		CFD503181ED6038B00BCD1F0 = {
 			isa = PBXGroup;
 			children = (
-				CFD5035A1ED6120D00BCD1F0 /* GoogleService-Info (1).plist */,
+				CFC6270F1ED697B3007509B9 /* GoogleService-Info.plist */,
 				CFD503231ED6038B00BCD1F0 /* fbchat */,
 				CFD503381ED6038B00BCD1F0 /* fbchatTests */,
 				CFD503431ED6038B00BCD1F0 /* fbchatUITests */,
@@ -304,9 +308,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFD5032F1ED6038B00BCD1F0 /* LaunchScreen.storyboard in Resources */,
+				CFC627101ED697B3007509B9 /* GoogleService-Info.plist in Resources */,
 				CFD5032C1ED6038B00BCD1F0 /* Assets.xcassets in Resources */,
 				CFD5032A1ED6038B00BCD1F0 /* Main.storyboard in Resources */,
-				CFD5035B1ED6120D00BCD1F0 /* GoogleService-Info (1).plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC627111ED69A1B007509B9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFC627121ED69A1C007509B9 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

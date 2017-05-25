@@ -9,6 +9,9 @@ pod 'Firebase/Database'
 pod 'Firebase/Invites'
 pod 'Firebase/RemoteConfig'
 pod 'Firebase/Storage'
+pod 'FacebookCore'
+pod 'FacebookLogin'
+pod 'FacebookShare'
 
 target 'fbchat' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks

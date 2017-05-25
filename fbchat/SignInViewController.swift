@@ -7,14 +7,34 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 import FacebookLogin
+
 
 class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("hello")
+        performSegue(withIdentifier: "SignInToFriendsList", sender:nil)
+        print("should i even have printed")
         // Do any additional setup after loading the view, typically from a nib.
+        FBSDKSettings.setAppID("1300012073416757")
+                let loginButton = LoginButton(readPermissions: [ .publicProfile])
+        loginButton.center = view.center
+        view.addSubview(loginButton)
+
+        if (FBSDKAccessToken.current() != nil)
+        {
+            print("user logged in!!")
+            performSegue(withIdentifier: "SignInToFriendsList", sender:nil)
+        }else{
+            print("user not logged in!\n")
+        }
+                
     }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
