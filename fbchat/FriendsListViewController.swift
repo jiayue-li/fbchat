@@ -59,6 +59,7 @@ class FriendsListViewController: UIViewController {
 //            print (resultNew["data"])
             let fName = resultNew["data"]  as! NSArray
             print(fName[0])
+            print(fName[1])
             
         })
     }
