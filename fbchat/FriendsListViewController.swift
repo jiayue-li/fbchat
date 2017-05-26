@@ -17,8 +17,8 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var friendsTable: UITableView!
     
-    var friends = ["frienddd"]
-//    var friends = [String]()
+//    var friends = ["frienddd"]
+    var friends = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
