@@ -17,8 +17,14 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var friendsTable: UITableView!
     
-//    var friends = ["frienddd"]
-    var friends = [String]()
+    //    var friends = ["frienddd"]
+    struct friendNode {
+        var name:String
+        var image:UIImage
+    }
+    var friends = [friendNode]()
+//    var friends = [String]()
+//    var imageURLs = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +52,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     func fetchProfile(){
         print("fetching profile.....")
         let params = ["fields": "id, first_name, last_name, name, picture"]
-        FBSDKGraphRequest(graphPath: "me/friends", parameters: params).start(completionHandler: {(connection, result, error) -> Void in
+        FBSDKGraphRequest(graphPath: "me/taggable_friends", parameters: params).start(completionHandler: {(connection, result, error) -> Void in
             if error != nil{
                 print(error)
                 return
@@ -61,17 +67,35 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
                     return
                 }
                 
-//                let idkMirror = Mirror(reflecting: user)
-//                print(idkMirror.subjectType)
+                //                let idkMirror = Mirror(reflecting: user)
+                //                print(idkMirror.subjectType)
+                //unpacking each friend's userNode and adding to arrays
                 print(user["name"]!)
-                var userName = user["name"]!
-                self.friends.append(userName as! String)
-                print(self.friends[0])
-//                var someArray = [String]()
-//                someArray.append(userName as! String)
-//                self.friendsTable.beginUpdates()
-//                self.friendsTable.insertRows(at: [IndexPath(row: someArray.count-1, section: 0)], with: .automatic)
-//                self.friendsTable.endUpdates()
+                var userName = user["name"] as? String
+//                self.friends.append(userName!)
+                
+                var userPicture = user["picture"] as? [String: Any]
+                var userPicData = userPicture?["data"] as? [String: Any]
+                let userPicURL = userPicData?["url"] as? String
+                let url = URL(string: userPicURL!)
+                let data = try? Data(contentsOf: url!)
+                let userImage = UIImage(data: data!) as! UIImage
+                
+                let friendStruct = friendNode(name: userName!, image: userImage)
+                
+                self.friends.append(friendStruct)
+//                self.imageURLs.append(userPicURL!)
+                
+//                let userPic = Mirror(reflecting: userImageURL)
+//                print("Type: \(userPic.subjectType)")
+//                self.imageURLs.append(userImageURL as! String)
+//                print(self.friends)
+//                print("imageURLSize: \(self.imageURLs.count)")
+                //                var someArray = [String]()
+                //                someArray.append(userName as! String)
+                //                self.friendsTable.beginUpdates()
+                //                self.friendsTable.insertRows(at: [IndexPath(row: someArray.count-1, section: 0)], with: .automatic)
+                //                self.friendsTable.endUpdates()
             }
             self.friendsTable.reloadData()
             
@@ -84,12 +108,41 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let friendCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        friendCell.textLabel?.text = friends[indexPath.row]
-        return(friendCell)
-//        return nil
+//        let friendCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
+//        friendCell.textLabel?.text = friends[indexPath.row]
+//        return(friendCell)
+//        let friendCell = self.friendsTable.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath)
+//        DispatchQueue.main.async{
+//            cell.imageView?.image = UIImage.init(data: )
+//        }
+        
+        var friendCell = tableView.dequeueReusableCell(withIdentifier: "friendCell")!
+        
+        var friendNames = [String]()
+        var friendPics = [UIImage]()
+        
+        let friendsList = self.friends as [friendNode]
+        
+        for fNode in self.friends {
+            friendNames.append(fNode.name as String)
+            friendPics.append(fNode.image as UIImage)
+        }
+        
+        friendCell.textLabel?.text = friendNames[indexPath.row]
+        
+//        var imageName = UIImage(named: transportItems[indexPath.row])
+        friendCell.imageView?.image = friendPics[indexPath.row]
+        friendCell.imageView?.
+        
+        return friendCell
+        
+        
+        
+        
+        
+        
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         friendsTable.reloadData()
     }
