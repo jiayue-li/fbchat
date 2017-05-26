@@ -67,13 +67,44 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uOu-PT-1a0">
+                                <rect key="frame" x="16" y="91" width="343" height="512"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="friendCell" id="L8h-FM-JNp">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L8h-FM-JNp" id="CaY-J9-dyG">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="RsE-6l-5pn" id="1Pj-RD-0oz"/>
+                                    <outlet property="delegate" destination="RsE-6l-5pn" id="f7U-Va-jbA"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3J-gZ-a1h">
+                                <rect key="frame" x="16" y="20" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="&lt;Back"/>
+                                <connections>
+                                    <action selector="backToSI:" destination="RsE-6l-5pn" eventType="touchUpInside" id="BHs-Dn-VPP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.31103757770000001" green="0.60747330759999996" blue="1" alpha="0.33376430457746481" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="friendsTable" destination="uOu-PT-1a0" id="Szb-QT-N3G"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueBack" id="vVB-vd-yAt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rn-DU-fIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="953" y="124"/>
+            <point key="canvasLocation" x="1017" y="75"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
