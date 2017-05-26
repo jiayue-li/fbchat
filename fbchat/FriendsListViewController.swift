@@ -11,12 +11,30 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 
 
+class myTableCell: UITableViewCell {
+    
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var userPic: UIImageView!
+    
+    @IBAction func startChat(_ sender: Any) {
+    }
+    override func awakeFromNib()
+    {
+        super.awakeFromNib()
+    }
+    
+    override func setSelected(_ selected:Bool, animated: Bool){
+        super.setSelected(selected, animated: animated)
+    }
 
+}
 class FriendsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     
     
     @IBOutlet weak var friendsTable: UITableView!
     
+    @IBOutlet weak var username: UILabel!
     //    var friends = ["frienddd"]
     struct friendNode {
         var name:String
@@ -116,7 +134,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
 //            cell.imageView?.image = UIImage.init(data: )
 //        }
         
-        var friendCell = tableView.dequeueReusableCell(withIdentifier: "friendCell")!
+        var friendCell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! myTableCell
         
         var friendNames = [String]()
         var friendPics = [UIImage]()
@@ -128,12 +146,14 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             friendPics.append(fNode.image as UIImage)
         }
         
-        friendCell.textLabel?.text = friendNames[indexPath.row]
+//        friendCell.textLabel?.text = friendNames[indexPath.row]
         
 //        var imageName = UIImage(named: transportItems[indexPath.row])
-        friendCell.imageView?.image = friendPics[indexPath.row]
-        friendCell.imageView?.
+//        friendCell.imageView?.image = friendPics[indexPath.row]
         
+        friendCell.username.text = friendNames[indexPath.row]
+        friendCell.userPic.image = friendPics[indexPath.row]
+
         return friendCell
         
         
@@ -154,3 +174,5 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     
     
 }
+
+
