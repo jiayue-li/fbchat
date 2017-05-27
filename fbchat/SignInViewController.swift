@@ -45,20 +45,19 @@ class SignInViewController: UIViewController, LoginButtonDelegate {
         loginButton.center = view.center
         view.addSubview(loginButton)
         
-        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-
-        
-        Auth.auth().signIn(with: credential) { (user, error) in
-            // ...
-            if let error = error {
-                // ...
-                return
-            }
-        }
         
         if (FBSDKAccessToken.current() != nil)
         {
             print("user logged in!!")
+            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            Auth.auth().signIn(with: credential) { (user, error) in
+                // ...
+                if let error = error {
+                    // ...
+                    return
+                }
+            }
+
         }else{
             print("user not logged in!\n")
         }
