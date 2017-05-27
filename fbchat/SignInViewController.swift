@@ -7,28 +7,58 @@
 //
 
 import UIKit
+import Firebase
 import FBSDKCoreKit
 import FBSDKLoginKit
 import FacebookLogin
 
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, LoginButtonDelegate {
+    /**
+     Called when the button was used to login and the process finished.
+     
+     - parameter loginButton: Button that was used to login.
+     - parameter result:      The result of the login.
+     */
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+        print("User Logged In")
+        performSegue(withIdentifier: "segue1", sender: nil)
+
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton){
+        print("User Logged out")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hello")
-//        performSegue(withIdentifier: "SignInToFriendsList", sender:nil)
-        print("should i even have printed")
-        // Do any additional setup after loading the view, typically from a nib.
+        print("hi")
+//        if (!SignInViewController.isAlreadyLaunchedOnce){
+//            print("configuring...")
+//            FirebaseApp.configure()
+//            print("configured")
+//            SignInViewController.isAlreadyLaunchedOnce = true
+//        }
         FBSDKSettings.setAppID("1300012073416757")
-                let loginButton = LoginButton(readPermissions: [ .publicProfile, .email, .userFriends])
+        let loginButton = LoginButton(readPermissions:[ .publicProfile, .email, .userFriends])
+        loginButton.delegate = self
         loginButton.center = view.center
         view.addSubview(loginButton)
+        
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
 
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            // ...
+            if let error = error {
+                // ...
+                return
+            }
+        }
+        
         if (FBSDKAccessToken.current() != nil)
         {
             print("user logged in!!")
-            self.performSegue(withIdentifier: "segue2", sender:nil)
         }else{
             print("user not logged in!\n")
         }

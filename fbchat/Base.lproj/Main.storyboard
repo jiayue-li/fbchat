@@ -123,6 +123,14 @@
                                     <action selector="backToSI:" destination="RsE-6l-5pn" eventType="touchUpInside" id="BHs-Dn-VPP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJa-7c-cO7">
+                                <rect key="frame" x="299" y="20" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOut:" destination="RsE-6l-5pn" eventType="touchUpInside" id="yvN-Zv-17l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.78870457979999997" green="0.83659237190000002" blue="0.90359860749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>

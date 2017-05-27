@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FBSDKLoginKit
 import FBSDKCoreKit
 
@@ -62,10 +63,18 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     @IBAction func backToSI(_ sender: Any) {
-        print("hi")
         self.performSegue(withIdentifier: "segueBack", sender: nil)
     }
     
+    @IBAction func signOut(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
+
     
     func fetchProfile(){
         print("fetching profile.....")
