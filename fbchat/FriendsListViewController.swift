@@ -12,51 +12,10 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 
 
-class myTableCell: UITableViewCell {
-    
-    @IBOutlet weak var username: UILabel!
-    @IBOutlet weak var userPic: UIImageView!
-    
-    var userName: String?
-    var userID: String?
-    var userImageURL: String?
-    var friendName: String?
-    var friendID: String?
-    var friendPhotoURL: String?
-    
-    @IBAction func startChat(_ sender: Any) {
-    }
-    override func awakeFromNib()
-    {
-        super.awakeFromNib()
-    }
-    
-    override func setSelected(_ selected:Bool, animated: Bool){
-        super.setSelected(selected, animated: animated)
-    }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let data = Data()
-//        if let destinationViewController = segue.destination as? DestinationViewController {
-//            destinationViewController.data = data
-//        }
-//    }
-    
-
-}
-class FriendsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
+class FriendsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ChangeViewProtocol {
     
     @IBOutlet weak var friendsTable: UITableView!
-    
     @IBOutlet weak var username: UILabel!
-    
-    struct friendNode {
-        var name:String
-        var image:UIImage
-        var id:String
-    }
     
     var friends = [friendNode]()
     var myInfo: friendNode?
@@ -180,17 +139,10 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let friendCell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-//        friendCell.textLabel?.text = friends[indexPath.row]
-//        return(friendCell)
-//        let friendCell = self.friendsTable.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath)
-//        DispatchQueue.main.async{
-//            cell.imageView?.image = UIImage.init(data: )
-//        }
-        
         
         var friendCell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! myTableCell
         
+        friendCell.delegate = self
         
         var userNames = [String]()
         var userID = [String]()
@@ -207,18 +159,19 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             friendPics.append(fNode.image as UIImage)
         }
         
-//        friendCell.textLabel?.text = friendNames[indexPath.row]
-        
-//        var imageName = UIImage(named: transportItems[indexPath.row])
-//        friendCell.imageView?.image = friendPics[indexPath.row]
-        
+        friendCell.userNode = myInfo
+        friendCell.userFriendNode = friends[indexPath.row]
         friendCell.username.text = friendNames[indexPath.row]
         friendCell.userPic.image = friendPics[indexPath.row]
 
         return friendCell
-        
+
     }
-    
+
+    func loadNewScreen(controller: UIViewController) {
+        self.present(controller, animated: true) { () -> Void in
+        };
+    }
     override func viewWillAppear(_ animated: Bool) {
         friendsTable.reloadData()
     }
@@ -227,8 +180,6 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
     
 }
 

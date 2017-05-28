@@ -22,14 +22,18 @@ import Firebase
 class chatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var chatTable: UITableView!
+    @IBOutlet weak var chatWithLabel: UILabel!
     
-    var userData: userChatData?
+    var userData: friendNode?
+    var userFriendData: friendNode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         var ref: DatabaseReference!
         
         ref = Database.database().reference()
+        print(userData)
+        chatWithLabel.text = self.userFriendData?.name
         // Do any additional setup after loading the view, typically from a nib.
     }
     

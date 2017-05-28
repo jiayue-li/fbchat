@@ -12,6 +12,7 @@
 		CF51BF341EDA592A0074D88A /* chatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51BF331EDA592A0074D88A /* chatViewController.swift */; };
 		CF51BF381EDA5D760074D88A /* chatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51BF371EDA5D760074D88A /* chatCell.swift */; };
 		CF51BF3A1EDA68C50074D88A /* userData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51BF391EDA68C50074D88A /* userData.swift */; };
+		CF51BF3C1EDA98D60074D88A /* friendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51BF3B1EDA98D60074D88A /* friendCell.swift */; };
 		CFC08F461ED61E300089F984 /* Pods_fbchat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC08F451ED61E300089F984 /* Pods_fbchat.framework */; };
 		CFC08F4B1ED61F020089F984 /* facebook-sdk-swift-0.2.0 in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC08F401ED61D690089F984 /* facebook-sdk-swift-0.2.0 */; };
 		CFC08F4C1ED64BBD0089F984 /* Login in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC08F491ED61EDD0089F984 /* Login */; };
@@ -59,6 +60,7 @@
 		CF51BF331EDA592A0074D88A /* chatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatViewController.swift; sourceTree = "<group>"; };
 		CF51BF371EDA5D760074D88A /* chatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatCell.swift; sourceTree = "<group>"; };
 		CF51BF391EDA68C50074D88A /* userData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userData.swift; sourceTree = "<group>"; };
+		CF51BF3B1EDA98D60074D88A /* friendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = friendCell.swift; sourceTree = "<group>"; };
 		CFC08F401ED61D690089F984 /* facebook-sdk-swift-0.2.0 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "facebook-sdk-swift-0.2.0"; path = "../../../Downloads/facebook-sdk-swift-0.2.0"; sourceTree = "<group>"; };
 		CFC08F431ED61DFA0089F984 /* FacebookLogin.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = FacebookLogin.xcconfig; path = "../../../Downloads/facebook-sdk-swift-0.2.0/Configurations/FacebookLogin.xcconfig"; sourceTree = "<group>"; };
 		CFC08F451ED61E300089F984 /* Pods_fbchat.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_fbchat.framework; path = "Pods/../build/Debug-iphoneos/Pods_fbchat.framework"; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				CF51BF331EDA592A0074D88A /* chatViewController.swift */,
 				CF51BF371EDA5D760074D88A /* chatCell.swift */,
 				CF51BF391EDA68C50074D88A /* userData.swift */,
+				CF51BF3B1EDA98D60074D88A /* friendCell.swift */,
 			);
 			path = fbchat;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				CFD503591ED60D5A00BCD1F0 /* FriendsListViewController.swift in Sources */,
 				CF51BF381EDA5D760074D88A /* chatCell.swift in Sources */,
 				CF51BF341EDA592A0074D88A /* chatViewController.swift in Sources */,
+				CF51BF3C1EDA98D60074D88A /* friendCell.swift in Sources */,
 				CF51BF3A1EDA68C50074D88A /* userData.swift in Sources */,
 				CFD503271ED6038B00BCD1F0 /* ViewController.swift in Sources */,
 				CFD503551ED608ED00BCD1F0 /* SignInViewController.swift in Sources */,

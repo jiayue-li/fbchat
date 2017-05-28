@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct userChatData{
     var userName: String
@@ -15,4 +16,10 @@ struct userChatData{
     var friendName: String
     var friendID: String
     var friendPhotoURL: String
+}
+
+struct friendNode {
+    var name:String
+    var image:UIImage
+    var id:String
 }
