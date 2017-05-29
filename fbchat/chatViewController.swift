@@ -9,21 +9,16 @@
 import UIKit
 import Firebase
 
-
-//struct userChatData{
-//    var userName: String
-//    var userID: String
-//    var userPhotoURL: String
-//    var friendName: String
-//    var friendID: String
-//    var friendPhotoURL: String
-//}
-
 class chatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var chatTable: UITableView!
     @IBOutlet weak var chatWithLabel: UILabel!
+    var ref: DatabaseReference!
+    var messages: [Database]! = []
+    fileprivate var _refHandle: DatabaseHandle!
     
+    var storageRef: StorageReference!
+    var remoteConfig: RemoteConfig!
     
     var userData: friendNode?
     var userFriendData: friendNode?
@@ -40,14 +35,30 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var ref: DatabaseReference!
-        
-        ref = Database.database().reference()
-        print(userData)
         var friendName = self.userFriendData?.name as! String
-        print(friendName)
+        
+        configureDatabase()
+        addUser()
         chatWithLabel?.text = friendName
-        // Do any additional setup after loading the view, typically from a nib.
+
+        
+    }
+    
+    func configureDatabase() {
+        ref = Database.database().reference()
+    }
+    
+    func addUser() {
+        var userID = userData?.id as! String
+       
+//        var userID = "person2"
+        ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.exists(){
+                print("true rooms exist")
+            }else{
+                print("this is not right....")
+            }
+        })
     }
     
     override func didReceiveMemoryWarning() {
