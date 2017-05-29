@@ -210,25 +210,28 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdw-hl-old">
-                                <rect key="frame" x="318" y="597" width="41" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACg-R2-wlb">
+                                <rect key="frame" x="318" y="597" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendMessage:" destination="peh-3Z-StQ" eventType="touchUpInside" id="SrG-dR-Aer"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Apz-I0-Q88">
-                                <rect key="frame" x="16" y="597" width="287" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWp-wX-JdZ">
+                                <rect key="frame" x="16" y="598" width="289" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.78870457979999997" green="0.83659237190000002" blue="0.90359860749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="hdw-hl-old" firstAttribute="leading" secondItem="Apz-I0-Q88" secondAttribute="trailing" constant="10" id="k8b-ya-6hf"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="chatTable" destination="yjA-4g-deF" id="u7I-8T-puu"/>
                         <outlet property="chatWithLabel" destination="Fja-C5-EqQ" id="Pcf-MG-6J7"/>
+                        <outlet property="sendMessageTextBox" destination="bWp-wX-JdZ" id="UyZ-Gn-l9g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e44-Ci-ctw" userLabel="First Responder" sceneMemberID="firstResponder"/>

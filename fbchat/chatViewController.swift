@@ -13,6 +13,7 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var chatTable: UITableView!
     @IBOutlet weak var chatWithLabel: UILabel!
+    @IBOutlet weak var sendMessageTextBox: UITextField!
     var ref: DatabaseReference!
     var messages: [Database]! = []
     fileprivate var _refHandle: DatabaseHandle!
@@ -49,10 +50,11 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func addUser() {
-        var userID = userData?.id as! String
-        var userName = userData?.name as! String
+//        var userID = userData?.id as! String
+//        var userName = userData?.name as! String
        
-//        var userID = "person2"
+        var userID = "person3"
+        var userName = "p1"
         ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
             if snapshot.exists(){
                 print("user exists already")
@@ -60,11 +62,33 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let newUserData = ["name": userName as NSString,
                                    "contacts": [String: String]() as! NSDictionary,
                                    "messages": [String: String]() as! NSDictionary]
-                self.ref.child("users").child("person2").setValue(newUserData)
+                self.ref.child("users").child(userID).setValue(newUserData)
 //                print("user does not exist")
             }
         })
     }
+    
+    @IBAction func sendMessage(_ sender: Any) {
+        if sendMessageTextBox.text != ""{
+//            var userID = userData?.id as! String
+//            var userName = userData?.name as! String
+//            var friendID = userFriendData?.id as! String
+//            var friendName = userFriendData?.id as! String
+            var userID = "person1"
+            var userName = "p1"
+            var friendID = "person2"
+            var friendName = "p2"
+            
+            var message = sendMessageTextBox.text
+            let newMessageData = ["userName": userName,
+                                  "userMessage": message]
+            
+            self.ref.child("users").child(userID).child("messages").child(friendID).setValue(newMessageData)
+            
+            sendMessageTextBox.text = ""
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
