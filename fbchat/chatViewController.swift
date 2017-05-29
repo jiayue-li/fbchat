@@ -15,7 +15,8 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var chatWithLabel: UILabel!
     @IBOutlet weak var sendMessageTextBox: UITextField!
     var ref: DatabaseReference!
-    var messages: [Database]! = []
+    var allMessages: [[String:String]]! = []
+    var messages: [DataSnapshot]! = []
     fileprivate var _refHandle: DatabaseHandle!
     
     var storageRef: StorageReference!
@@ -23,6 +24,8 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var userData: friendNode?
     var userFriendData: friendNode?
+    var userID: String!
+    var friendID: String!
     
 //    init(userData: friendNode, userFriendData:friendNode){
 //        self.userData = userData
@@ -36,8 +39,15 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        chatTable.reloadData()
         var friendName = self.userFriendData?.name as! String
-        
+        self.userID = self.userData?.id as! String
+        self.friendID = self.userFriendData?.id as! String
+        print(allMessages)
+        var dict = ["userName": "p1",
+                    "userMessage": "blahblah"]
+        allMessages.append(dict)
+        print(allMessages)
         configureDatabase()
         addUser()
         chatWithLabel?.text = friendName
@@ -47,13 +57,20 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func configureDatabase() {
         ref = Database.database().reference()
+        // Listen for new messages in the Firebase database
+        _refHandle = self.ref.child("users").child("person1").child("messages").observe(.childAdded, with: {[weak self] (snapshot) -> Void in guard let strongSelf = self else { return }
+//            strongSelf.messages.append(snapshot)
+//            strongSelf.chatTable.insertRows(at: [IndexPath(row: strongSelf.messages.count-1, section: 0)], with: .automatic)
+            print(snapshot)
+            self?.chatTable.reloadData()
+        })
     }
     
     func addUser() {
 //        var userID = userData?.id as! String
 //        var userName = userData?.name as! String
        
-        var userID = "person3"
+        var userID = "person1"
         var userName = "p1"
         ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
             if snapshot.exists(){
@@ -84,7 +101,7 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
                                   "userMessage": message]
             
             self.ref.child("users").child(userID).child("messages").child(friendID).setValue(newMessageData)
-            
+            self.ref.child("users").child(friendID).child("messages").child(userID).setValue(newMessageData)
             sendMessageTextBox.text = ""
         }
     }
@@ -97,16 +114,38 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //TODO: return num messages
-        return 1
+        print(allMessages.count)
+        return allMessages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("changing table...")
+        print(tableView)
+        var cCell = tableView.dequeueReusableCell(withIdentifier: "chatCell") as! chatCell
+//        
+//        chatCell.delegate = self
+        var userNames = [String]()
+        var userMessages = [String]()
         
-        var chatCell = tableView.dequeueReusableCell(withIdentifier: "chatCell")
+        let messageList = self.allMessages as [[String:String]]
         
-        return chatCell!
+        for message in self.allMessages{
+            userNames.append(message["userName"]!)
+            userMessages.append(message["userMessage"]!)
+        }
+//        let messageSnapshot: DataSnapshot! = self.messages[indexPath.row]
+        cCell.messageName.text = userNames[indexPath.row]
+        cCell.messageText.text = userMessages[indexPath.row]
+        return cCell
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+//        chatTable.delegate = self
+//        chatTable.dataSource = self
+        chatTable.reloadData()
+    }
+
+
     
     
 }
