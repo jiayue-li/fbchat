@@ -50,13 +50,18 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func addUser() {
         var userID = userData?.id as! String
+        var userName = userData?.name as! String
        
 //        var userID = "person2"
         ref.child("users").child(userID).observeSingleEvent(of: .value, with: { (snapshot) in
             if snapshot.exists(){
-                print("true rooms exist")
+                print("user exists already")
             }else{
-                print("this is not right....")
+                let newUserData = ["name": userName as NSString,
+                                   "contacts": [String: String]() as! NSDictionary,
+                                   "messages": [String: String]() as! NSDictionary]
+                self.ref.child("users").child("person2").setValue(newUserData)
+//                print("user does not exist")
             }
         })
     }
