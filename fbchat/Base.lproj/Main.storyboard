@@ -99,7 +99,6 @@
                                                     <state key="normal" title="Chat&gt;"/>
                                                     <connections>
                                                         <action selector="startChat:" destination="L8h-FM-JNp" eventType="touchUpInside" id="LCa-dK-bqI"/>
-                                                        <segue destination="peh-3Z-StQ" kind="show" id="AY7-dp-9Lq"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -138,6 +137,7 @@
                     <connections>
                         <outlet property="friendsTable" destination="uOu-PT-1a0" id="Szb-QT-N3G"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segueBack" id="vVB-vd-yAt"/>
+                        <segue destination="peh-3Z-StQ" kind="show" identifier="seguetoChat" id="4Gw-fF-BFG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3rn-DU-fIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,7 +215,7 @@
                     </view>
                     <connections>
                         <outlet property="chatTable" destination="yjA-4g-deF" id="u7I-8T-puu"/>
-                        <outlet property="chatWithLabel" destination="Fja-C5-EqQ" id="PFh-mn-dOE"/>
+                        <outlet property="chatWithLabel" destination="Fja-C5-EqQ" id="Pcf-MG-6J7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e44-Ci-ctw" userLabel="First Responder" sceneMemberID="firstResponder"/>

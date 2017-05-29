@@ -8,7 +8,9 @@
 
 import Foundation
 import UIKit
-
+protocol ChangeViewProtocol : NSObjectProtocol {
+    func openChat(userData: friendNode, userFriendData: friendNode) -> Void;
+}
 
 class myTableCell: UITableViewCell{
     
@@ -36,19 +38,16 @@ class myTableCell: UITableViewCell{
     }
     
     @IBAction func startChat(_ sender: Any) {
+        print("presenting...")
         presentDestinationViewController()
     }
     
     func presentDestinationViewController() {
-        let chatVC = chatViewController(nibName: "chatViewController", bundle: nil)
-        chatVC.userData = self.userNode
-        chatVC.userFriendData = self.userFriendNode
-        print(chatVC.userData)
-        delegate?.loadNewScreen(controller: chatVC)
+//        let chatVC = chatViewController(userData: self.userNode!, userFriendData: self.userFriendNode!)
+//        chatVC.userData = self.userNode
+//        chatVC.userFriendData = self.userFriendNode
+//        delegate?.loadNewScreen(controller: chatVC)
+        delegate?.openChat(userData: self.userNode!, userFriendData: self.userFriendNode!)
     }
-    
 }
 
-protocol ChangeViewProtocol : NSObjectProtocol {
-    func loadNewScreen(controller: UIViewController) -> Void;
-}

@@ -19,6 +19,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     
     var friends = [friendNode]()
     var myInfo: friendNode?
+    var tempFriendInfo: friendNode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +49,10 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             print ("Error signing out: %@", signOutError)
         }
     }
-
+    
     
     func fetchProfile(){
-//        print("fetching profile.....")
+        //        print("fetching profile.....")
         let params = ["fields": "id, first_name, last_name, name, picture"]
         FBSDKGraphRequest(graphPath: "me", parameters: params).start(completionHandler: {(connection, result, error) -> Void in
             if error != nil{
@@ -73,7 +74,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             let data = try? Data(contentsOf: url!)
             let userImage = UIImage(data: data!) as! UIImage
             var myPicURL = resultMe["picture"] as? String
-
+            
             self.myInfo = friendNode(name: myName!, image: userImage, id: myName!)
         })
         
@@ -163,15 +164,31 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
         friendCell.userFriendNode = friends[indexPath.row]
         friendCell.username.text = friendNames[indexPath.row]
         friendCell.userPic.image = friendPics[indexPath.row]
-
+        
         return friendCell
-
+        
     }
-
+    
     func loadNewScreen(controller: UIViewController) {
         self.present(controller, animated: true) { () -> Void in
         };
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "seguetoChat" {
+            if let chatVC = segue.destination as? chatViewController {
+                chatVC.userData = myInfo!
+                chatVC.userFriendData = self.tempFriendInfo!
+            }
+        }
+    }
+    
+    func openChat(userData: friendNode, userFriendData: friendNode){
+        print(userFriendData)
+        self.tempFriendInfo = userFriendData;
+        performSegue(withIdentifier: "seguetoChat", sender: nil)
+    }
+        
     override func viewWillAppear(_ animated: Bool) {
         friendsTable.reloadData()
     }

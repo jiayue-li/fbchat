@@ -24,8 +24,19 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var chatTable: UITableView!
     @IBOutlet weak var chatWithLabel: UILabel!
     
+    
     var userData: friendNode?
     var userFriendData: friendNode?
+    
+//    init(userData: friendNode, userFriendData:friendNode){
+//        self.userData = userData
+//        self.userFriendData = userFriendData
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +44,9 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         ref = Database.database().reference()
         print(userData)
-        chatWithLabel.text = self.userFriendData?.name
+        var friendName = self.userFriendData?.name as! String
+        print(friendName)
+        chatWithLabel?.text = friendName
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -53,7 +66,7 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return chatCell!
     }
-
-
+    
+    
     
 }
