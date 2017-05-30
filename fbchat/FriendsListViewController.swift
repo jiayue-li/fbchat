@@ -100,7 +100,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
                 //                let idkMirror = Mirror(reflecting: user)
                 //                print(idkMirror.subjectType)
                 //unpacking each friend's userNode and adding to arrays
-                print(user["name"]!)
+//                print(user["name"]!)
                 var userName = user["name"] as? String
                 //                self.friends.append(userName!)
                 
@@ -135,7 +135,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("friends:  \(friends.count)")
+//        print("friends:  \(friends.count)")
         return friends.count
     }
     

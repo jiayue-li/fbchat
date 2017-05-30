@@ -43,13 +43,9 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         var friendName = self.userFriendData?.name as! String
         self.userID = self.userData?.id as! String
         self.friendID = self.userFriendData?.id as! String
-        print(allMessages)
-        var dict = ["userName": "p1",
-                    "userMessage": "blahblah"]
-        allMessages.append(dict)
-        print(allMessages)
         configureDatabase()
         addUser()
+        configureMessages()
         chatWithLabel?.text = friendName
 
         
@@ -59,11 +55,21 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         ref = Database.database().reference()
         // Listen for new messages in the Firebase database
         _refHandle = self.ref.child("users").child("person1").child("messages").observe(.childAdded, with: {[weak self] (snapshot) -> Void in guard let strongSelf = self else { return }
-//            strongSelf.messages.append(snapshot)
-//            strongSelf.chatTable.insertRows(at: [IndexPath(row: strongSelf.messages.count-1, section: 0)], with: .automatic)
+            if(snapshot.exists()){
             print(snapshot)
+            print(snapshot.value!)
+            let messageNodeDict = snapshot.value as! [String:[String:String]]
+            
+            
+            var componentArray = Array(messageNodeDict.keys)
+            print(componentArray)
+            let messageKey = componentArray[0]
+            print(messageKey)
+            self?.allMessages.append(messageNodeDict[messageKey]!)
             self?.chatTable.reloadData()
+        }
         })
+        
     }
     
     func addUser() {
@@ -85,6 +91,28 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         })
     }
     
+    func configureMessages(){
+        ref.child("users").child("person1").child("messages").child("person2").observeSingleEvent(of: .value, with: { (snapshot) in
+            if (snapshot.exists()){
+                let idkMirror2 = Mirror(reflecting: snapshot.value!)
+                print("snapshot.value type: \(idkMirror2.subjectType)")
+                let messagesList = snapshot.children
+            for messageSnap in messagesList {
+//                let idkMirror1 = Mirror(reflecting: messageSnap)
+//                print("message type: \(idkMirror1.subjectType)")
+                print("message: \(messageSnap)")
+                let messageSnapshot = messageSnap as! DataSnapshot
+                var message = messageSnapshot.value!
+                self.allMessages.append(message as! [String : String])
+//                var componentArray = Array(message.keys)
+//                key = componentArray[0]
+//                self.allMessages.append(message[key])
+//                print(message)
+                }
+            }
+        })
+        self.chatTable.reloadData()
+    }
     @IBAction func sendMessage(_ sender: Any) {
         if sendMessageTextBox.text != ""{
 //            var userID = userData?.id as! String
@@ -96,12 +124,16 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
             var friendID = "person2"
             var friendName = "p2"
             
+            let key = self.ref.child("users").child(userID).child("messages").childByAutoId().key
+            print(key)
+            
             var message = sendMessageTextBox.text
             let newMessageData = ["userName": userName,
                                   "userMessage": message]
             
-            self.ref.child("users").child(userID).child("messages").child(friendID).setValue(newMessageData)
-            self.ref.child("users").child(friendID).child("messages").child(userID).setValue(newMessageData)
+            
+            self.ref.child("users").child(userID).child("messages").child(friendID).child(key).setValue(newMessageData)
+            self.ref.child("users").child(friendID).child("messages").child(userID).child(key).setValue(newMessageData)
             sendMessageTextBox.text = ""
         }
     }
