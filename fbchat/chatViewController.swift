@@ -54,18 +54,19 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func configureDatabase() {
         ref = Database.database().reference()
         // Listen for new messages in the Firebase database
-        _refHandle = self.ref.child("users").child("person1").child("messages").observe(.childAdded, with: {[weak self] (snapshot) -> Void in guard let strongSelf = self else { return }
+        _refHandle = self.ref.child("users").child("person1").child("messages").child("person2").observe(.childAdded, with: {[weak self] (snapshot) -> Void in guard let strongSelf = self else { return }
             if(snapshot.exists()){
             print(snapshot)
             print(snapshot.value!)
-            let messageNodeDict = snapshot.value as! [String:[String:String]]
+                let messageNodeDict = snapshot.value as! [String: String]
             
             
-            var componentArray = Array(messageNodeDict.keys)
-            print(componentArray)
-            let messageKey = componentArray[0]
-            print(messageKey)
-            self?.allMessages.append(messageNodeDict[messageKey]!)
+//            var componentArray = Array(messageNodeDict.keys)
+//            print(componentArray)
+//            let messageKey = componentArray[0]
+//            print(messageKey)
+//            self?.allMessages.append(messageNodeDict[messageKey]!)
+            self?.allMessages.append(messageNodeDict)
             self?.chatTable.reloadData()
         }
         })
