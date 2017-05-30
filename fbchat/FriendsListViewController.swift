@@ -166,7 +166,6 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
         friendCell.userPic.image = friendPics[indexPath.row]
         
         return friendCell
-        
     }
     
     func loadNewScreen(controller: UIViewController) {

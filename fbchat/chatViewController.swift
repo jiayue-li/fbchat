@@ -45,7 +45,7 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.friendID = self.userFriendData?.id as! String
         configureDatabase()
         addUser()
-        configureMessages()
+//        configureMessages()
         chatWithLabel?.text = friendName
 
         
@@ -57,7 +57,7 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         _refHandle = self.ref.child("users").child("person1").child("messages").child("person2").observe(.childAdded, with: {[weak self] (snapshot) -> Void in guard let strongSelf = self else { return }
             if(snapshot.exists()){
             print(snapshot)
-            print(snapshot.value!)
+            print("new message : \(snapshot.value!)")
                 let messageNodeDict = snapshot.value as! [String: String]
             
             
@@ -157,6 +157,30 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         var cCell = tableView.dequeueReusableCell(withIdentifier: "chatCell") as! chatCell
 //        
 //        chatCell.delegate = self
+//        var userNames = [String]()
+//        var userMessages = [String]()
+//        
+//        let messageList = self.allMessages as [[String:String]]
+//        
+//        for message in self.allMessages{
+//            userNames.append(message["userName"]!)
+//            userMessages.append(message["userMessage"]!)
+//        }
+//        let messageSnapshot: DataSnapshot! = self.messages[indexPath.row]
+        var nameAndMessages = getUserMessages()
+        var userNames = nameAndMessages["userNames"] as! [String]
+        var userMessages = nameAndMessages["userMessages"] as! [String]
+        var userProfiles = getUserProfiles(userNames: userNames) as! [UIImage]
+        
+        cCell.messageName.text = userNames[indexPath.row]
+        cCell.messageText.text = userMessages[indexPath.row]
+        cCell.userPic.image = userProfiles[indexPath.row]
+        
+        return cCell
+    }
+    
+    func getUserMessages()->[String: [String]]{
+        
         var userNames = [String]()
         var userMessages = [String]()
         
@@ -166,10 +190,24 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
             userNames.append(message["userName"]!)
             userMessages.append(message["userMessage"]!)
         }
-//        let messageSnapshot: DataSnapshot! = self.messages[indexPath.row]
-        cCell.messageName.text = userNames[indexPath.row]
-        cCell.messageText.text = userMessages[indexPath.row]
-        return cCell
+        
+        var nameAndMessages = ["userNames": userNames as [String],
+                               "userMessages": userMessages as [String]
+        ]
+        return nameAndMessages
+    }
+    
+    func getUserProfiles(userNames: [String]) -> [UIImage]{
+        
+        var userProfiles = [UIImage]()
+        for userName in userNames{
+            if userName == self.userData?.name{
+                userProfiles.append((self.userData?.image)!)
+            }else{
+                userProfiles.append((self.userFriendData?.image)!)
+            }
+        }
+        return userProfiles
     }
     
     override func viewWillAppear(_ animated: Bool) {
