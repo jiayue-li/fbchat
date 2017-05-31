@@ -42,7 +42,7 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.friendName = self.userFriendData?.name as! String
         self.friendID = self.userFriendData?.id as! String
         self.userID = self.userData?.id as! String
-        self.myName = self.userFriendData?.name as! String
+        self.myName = self.userData?.name as! String
         chatWithLabel?.text = friendName
         print("MY ID: \(self.userID)")
         print("FRIENDS ID: \(self.friendID)")

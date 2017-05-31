@@ -73,7 +73,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             let userImage = UIImage(data: data!) as! UIImage
             var myPicURL = resultMe["picture"] as? String
             
-            self.myInfo = friendNode(name: myName!, image: userImage, id: myName!)
+            self.myInfo = friendNode(name: myName!, image: userImage, id: myID!)
         })
         
     }
