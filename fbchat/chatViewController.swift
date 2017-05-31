@@ -157,6 +157,7 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         cCell.messageName.text = userNames[indexPath.row]
         cCell.messageText.text = userMessages[indexPath.row]
         cCell.userPic.image = userProfiles[indexPath.row]
+        cCell.backgroundColor = UIColor.clear
         
         return cCell
     }

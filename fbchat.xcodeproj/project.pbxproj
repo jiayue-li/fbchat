@@ -81,6 +81,7 @@
 		CFD503461ED6038B00BCD1F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFD503541ED608ED00BCD1F0 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CFD503581ED60D5A00BCD1F0 /* FriendsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
+		CFDC00DD1EDE991A003BA48F /* fbchat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = fbchat.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +167,7 @@
 		CFD503231ED6038B00BCD1F0 /* fbchat */ = {
 			isa = PBXGroup;
 			children = (
+				CFDC00DD1EDE991A003BA48F /* fbchat.entitlements */,
 				CFD503241ED6038B00BCD1F0 /* AppDelegate.swift */,
 				CFD503261ED6038B00BCD1F0 /* ViewController.swift */,
 				CFD503281ED6038B00BCD1F0 /* Main.storyboard */,
@@ -279,6 +281,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = DJW83MEF6R;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					CFD503341ED6038B00BCD1F0 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -647,6 +654,7 @@
 			baseConfigurationReference = 3D6C42621E792116DE25BBBE /* Pods-fbchat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = fbchat/fbchat.entitlements;
 				DEVELOPMENT_TEAM = DJW83MEF6R;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -665,6 +673,7 @@
 			baseConfigurationReference = 7945F386D92F5E6CBBCDC277 /* Pods-fbchat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = fbchat/fbchat.entitlements;
 				DEVELOPMENT_TEAM = DJW83MEF6R;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -13,7 +13,7 @@ class chatCell: UITableViewCell {
     
     @IBOutlet weak var userPic: UIImageView!
     @IBOutlet weak var messageName: UILabel!
-    @IBOutlet weak var messageText: UILabel!
+    @IBOutlet weak var messageText: UITextView!
     
     override func setSelected(_ selected:Bool, animated: Bool){
         super.setSelected(selected, animated: animated)

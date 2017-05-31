@@ -13,22 +13,40 @@ import FBSDKLoginKit
 import FacebookLogin
 
 
-class SignInViewController: UIViewController, LoginButtonDelegate {
+class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     /**
      Called when the button was used to login and the process finished.
      
      - parameter loginButton: Button that was used to login.
      - parameter result:      The result of the login.
      */
-    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        print("User Logged In")
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error?) {
+        if let error = error {
+            print(error.localizedDescription)
+            print("user logged in")
+            print(FBSDKAccessToken.current())
+            return
+        }
+        print("user logged in")
+        
         print(FBSDKAccessToken.current())
-        performSegue(withIdentifier: "segue2", sender: nil)
+        // ...
     }
     
-    func loginButtonDidLogOut(_ loginButton: LoginButton){
-        print("User Logged out")
+    public func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!){
+        print("User Logged Out")
     }
+    
+//    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+//        print("User Logged In")
+//        print(FBSDKAccessToken.current())
+//        performSegue(withIdentifier: "segue2", sender: nil)
+//    }
+//    
+//    func loginButtonDidLogOut(_ loginButton: LoginButton){
+//        print("User Logged out")
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +58,10 @@ class SignInViewController: UIViewController, LoginButtonDelegate {
 //            SignInViewController.isAlreadyLaunchedOnce = true
 //        }
         FBSDKSettings.setAppID("1300012073416757")
-        let loginButton = LoginButton(readPermissions:[ .publicProfile, .email, .userFriends])
+        FBSDKProfile.enableUpdates(onAccessTokenChange: true)
+        let loginButton = FBSDKLoginButton()
+        loginButton.readPermissions = ["public_profile", "email", "user_friends"]
+//        let loginButton = FBSDKLoginButton(readPermissions:[ .publicProfile, .email, .userFriends])
         loginButton.delegate = self
         loginButton.center = view.center
         view.addSubview(loginButton)

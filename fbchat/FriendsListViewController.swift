@@ -149,6 +149,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
         friendCell.userFriendNode = friends[indexPath.row]
         friendCell.username.text = friendNames[indexPath.row]
         friendCell.userPic.image = friendPics[indexPath.row]
+        friendCell.backgroundColor = UIColor.clear
         
         return friendCell
     }
