@@ -22,7 +22,8 @@ class SignInViewController: UIViewController, LoginButtonDelegate {
      */
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
         print("User Logged In")
-        performSegue(withIdentifier: "segue1", sender: nil)
+        print(FBSDKAccessToken.current())
+        performSegue(withIdentifier: "segue2", sender: nil)
     }
     
     func loginButtonDidLogOut(_ loginButton: LoginButton){
