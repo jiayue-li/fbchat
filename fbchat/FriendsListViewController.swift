@@ -26,7 +26,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
         // Do any additional setup after loading the view, typically from a nib.
         if (FBSDKAccessToken.current() != nil)
         {
-            print("friendslistviewloaded")
+//            print("friendslistviewloaded")
             fetchProfile()
             fetchFriendsProfiles()
             self.friendsTable.reloadData()
@@ -35,7 +35,6 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             print("Please log in to continue")
         }
     }
-    
     
     @IBAction func backToSI(_ sender: Any) {
         self.performSegue(withIdentifier: "segueBack", sender: nil)
@@ -49,7 +48,6 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             print ("Error signing out: %@", signOutError)
         }
     }
-    
     
     func fetchProfile(){
         //        print("fetching profile.....")
@@ -82,7 +80,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func fetchFriendsProfiles(){
         let params = ["fields": "id, first_name, last_name, name, picture"]
-        FBSDKGraphRequest(graphPath: "me/taggable_friends", parameters: params).start(completionHandler: {(connection, result, error) -> Void in
+        FBSDKGraphRequest(graphPath: "me/friends", parameters: params).start(completionHandler: {(connection, result, error) -> Void in
             if error != nil{
                 print(error)
                 return
@@ -116,21 +114,8 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
                 let friendStruct = friendNode(name: userName!, image: userImage, id: userID!)
                 
                 self.friends.append(friendStruct)
-                //                self.imageURLs.append(userPicURL!)
-                
-                //                let userPic = Mirror(reflecting: userImageURL)
-                //                print("Type: \(userPic.subjectType)")
-                //                self.imageURLs.append(userImageURL as! String)
-                //                print(self.friends)
-                //                print("imageURLSize: \(self.imageURLs.count)")
-                //                var someArray = [String]()
-                //                someArray.append(userName as! String)
-                //                self.friendsTable.beginUpdates()
-                //                self.friendsTable.insertRows(at: [IndexPath(row: someArray.count-1, section: 0)], with: .automatic)
-                //                self.friendsTable.endUpdates()
             }
             self.friendsTable.reloadData()
-            
         })
     }
     
