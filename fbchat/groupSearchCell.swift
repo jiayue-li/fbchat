@@ -12,4 +12,13 @@ class groupSearchCell: UITableViewCell {
     
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userPic: UIImageView!
+    
+    var friendInfo: friendNode!
+    weak var delegate: groupChatSearchViewController?
+    
+    @IBAction func selectFriend(_ sender: Any) {
+        self.delegate?.tempFriendsinChat.append(friendInfo)
+        delegate?.resetGroupLabel()
+    }
+    
 }

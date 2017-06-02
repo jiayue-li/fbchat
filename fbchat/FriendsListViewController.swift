@@ -92,13 +92,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             let data = resultFriends["data"]  as! NSArray
             for userNode in data {
                 guard let user = userNode as? [String:Any] else {
-                    return
-                }
-                
-                //                let idkMirror = Mirror(reflecting: user)
-                //                print(idkMirror.subjectType)
-                //unpacking each friend's userNode and adding to arrays
-//                print(user["name"]!)
+                    return}
                 var userName = user["name"] as? String
                 //                self.friends.append(userName!)
                 

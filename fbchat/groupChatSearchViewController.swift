@@ -14,13 +14,15 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
     //instance variables
 
     @IBOutlet weak var searchTable: UITableView!
-    var shouldShowSearchResults = false
+    @IBOutlet weak var groupChatLabel: UILabel!
     var searchController: UISearchController!
-    
+
+    var shouldShowSearchResults = false
     var friends = [friendNode]()
     var filteredFriends = [friendNode]()
     var myInfo: friendNode!
-    
+    var tempFriendsinChat = [friendNode]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -34,8 +36,6 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
         // Dispose of any resources that can be recreated.
     }
     
-
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if shouldShowSearchResults{
             return self.filteredFriends.count
@@ -47,6 +47,8 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var friendCell = tableView.dequeueReusableCell(withIdentifier: "groupFriendCell", for: indexPath) as! groupSearchCell
     
+        friendCell.delegate = self
+        
         var friendNames = [String]()
         var friendPics = [UIImage]()
         if shouldShowSearchResults {
@@ -54,14 +56,13 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
                 return friend.name})
             friendPics = filteredFriends.map({(friend)->UIImage in
                 return friend.image})
-//            friendCell.userName.text = friendNames[indexPath.row]
-//            friendCell.userPic.image = friendPics[indexPath.row]
+            friendCell.friendInfo = filteredFriends[indexPath.row]
         }else {
             friendNames = friends.map({(friend)->String in
                 return friend.name})
             friendPics = friends.map({(friend)->UIImage in
                 return friend.image})
-//            friendCell.userName.text = friendNames[indexPath.row]
+            friendCell.friendInfo = friends[indexPath.row]
         }
         friendCell.userName.text = friendNames[indexPath.row]
         friendCell.userPic.image = friendPics[indexPath.row]
@@ -90,6 +91,19 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
             })
         
         searchTable.reloadData()
+    }
+    
+    func resetGroupLabel(){
+        if tempFriendsinChat.count == 0 {
+            groupChatLabel.text = ""
+        }else{
+            var groupChatLabelText = "Group Chat with "
+            for friend in tempFriendsinChat {
+                groupChatLabelText = groupChatLabelText + friend.name + ", "
+            }
+            groupChatLabelText = groupChatLabelText.index(groupChatLabelText.startIndex, offsetBy: groupChatLabelText.characters.count-2)
+            groupChatLabel.text = groupChatLabelText
+        }
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
