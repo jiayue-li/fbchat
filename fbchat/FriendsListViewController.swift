@@ -80,7 +80,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func fetchFriendsProfiles(){
         let params = ["fields": "id, first_name, last_name, name, picture"]
-        FBSDKGraphRequest(graphPath: "me/friends", parameters: params).start(completionHandler: {(connection, result, error) -> Void in
+        FBSDKGraphRequest(graphPath: "me/taggable_friends", parameters: params).start(completionHandler: {(connection, result, error) -> Void in
             if error != nil{
                 print(error)
                 return
@@ -165,10 +165,17 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
                 chatVC.userFriendData = self.tempFriendInfo!
             }
         }
+        
+        if segue.identifier == "segueToGroupChatSearch" {
+            if let groupSearch = segue.destination as? groupChatSearchViewController {
+                groupSearch.friends = self.friends
+                groupSearch.myInfo = self.myInfo!
+            }
+        }
     }
     
     func openChat(userData: friendNode, userFriendData: friendNode){
-        print(userFriendData)
+//        print(userFriendData)
         self.tempFriendInfo = userFriendData;
         performSegue(withIdentifier: "seguetoChat", sender: nil)
     }

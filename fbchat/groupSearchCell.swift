@@ -11,4 +11,5 @@ import UIKit
 class groupSearchCell: UITableViewCell {
     
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userPic: UIImageView!
 }
