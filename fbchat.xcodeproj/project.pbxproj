@@ -28,6 +28,8 @@
 		CFD503451ED6038B00BCD1F0 /* fbchatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503441ED6038B00BCD1F0 /* fbchatUITests.swift */; };
 		CFD503551ED608ED00BCD1F0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503541ED608ED00BCD1F0 /* SignInViewController.swift */; };
 		CFD503591ED60D5A00BCD1F0 /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD503581ED60D5A00BCD1F0 /* FriendsListViewController.swift */; };
+		CFDC00E31EE0A94C003BA48F /* groupChatSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC00E21EE0A94C003BA48F /* groupChatSearchViewController.swift */; };
+		CFDC00E51EE0AD5F003BA48F /* groupSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDC00E41EE0AD5F003BA48F /* groupSearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		CFD503541ED608ED00BCD1F0 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		CFD503581ED60D5A00BCD1F0 /* FriendsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
 		CFDC00DD1EDE991A003BA48F /* fbchat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = fbchat.entitlements; sourceTree = "<group>"; };
+		CFDC00E21EE0A94C003BA48F /* groupChatSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupChatSearchViewController.swift; sourceTree = "<group>"; };
+		CFDC00E41EE0AD5F003BA48F /* groupSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupSearchCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 				CFDC00DD1EDE991A003BA48F /* fbchat.entitlements */,
 				CFD503241ED6038B00BCD1F0 /* AppDelegate.swift */,
 				CFD503261ED6038B00BCD1F0 /* ViewController.swift */,
+				CFDC00E41EE0AD5F003BA48F /* groupSearchCell.swift */,
+				CFDC00E21EE0A94C003BA48F /* groupChatSearchViewController.swift */,
 				CFD503281ED6038B00BCD1F0 /* Main.storyboard */,
 				CFD5032B1ED6038B00BCD1F0 /* Assets.xcassets */,
 				CFD5032D1ED6038B00BCD1F0 /* LaunchScreen.storyboard */,
@@ -495,12 +501,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFD503591ED60D5A00BCD1F0 /* FriendsListViewController.swift in Sources */,
+				CFDC00E51EE0AD5F003BA48F /* groupSearchCell.swift in Sources */,
 				CF51BF381EDA5D760074D88A /* chatCell.swift in Sources */,
 				CF51BF341EDA592A0074D88A /* chatViewController.swift in Sources */,
 				CF51BF3C1EDA98D60074D88A /* friendCell.swift in Sources */,
 				CF51BF3A1EDA68C50074D88A /* userData.swift in Sources */,
 				CFD503271ED6038B00BCD1F0 /* ViewController.swift in Sources */,
 				CFD503551ED608ED00BCD1F0 /* SignInViewController.swift in Sources */,
+				CFDC00E31EE0A94C003BA48F /* groupChatSearchViewController.swift in Sources */,
 				CFD503251ED6038B00BCD1F0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

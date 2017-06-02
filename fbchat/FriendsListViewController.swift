@@ -120,7 +120,6 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        print("friends:  \(friends.count)")
         return friends.count
     }
     
