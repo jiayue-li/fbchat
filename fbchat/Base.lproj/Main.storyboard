@@ -72,7 +72,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="L8h-FM-JNp" id="CaY-J9-dyG" customClass="myTableCell" customModule="fbchat" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zX-mR-avQ" userLabel="usernameLabel">
@@ -165,7 +165,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="63"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="cwX-Wm-zqj" id="zGi-dY-7fF" customClass="chatCell" customModule="fbchat" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="62"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="62.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKZ-Bl-x15" userLabel="messageSender">
@@ -278,7 +278,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="79l-ty-Hnf">
-                                <rect key="frame" x="16" y="28" width="343" height="569"/>
+                                <rect key="frame" x="16" y="50" width="343" height="531"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -286,7 +286,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ghG-Pk-86d" id="wPy-6P-Kdr" customClass="groupSearchCell" customModule="fbchat" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="userName" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjD-gJ-Ldo">
@@ -311,7 +311,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="selectFriendButton" destination="emn-mn-m3A" id="kZi-KA-6af"/>
                                             <outlet property="userName" destination="GjD-gJ-Ldo" id="gti-cR-ZBR"/>
                                             <outlet property="userPic" destination="zVS-IA-lgL" id="P5H-fR-LR3"/>
                                         </connections>
@@ -322,26 +321,29 @@
                                     <outlet property="delegate" destination="h8u-ef-AqR" id="mHT-ll-3ce"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group Chat with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glx-Sr-jA7">
-                                <rect key="frame" x="16" y="605" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOp-qY-WdL">
                                 <rect key="frame" x="143" y="621" width="89" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Start Chat!&gt;"/>
+                                <connections>
+                                    <action selector="startGroupChat:" destination="h8u-ef-AqR" eventType="touchUpInside" id="hMr-9n-Ow6"/>
+                                </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IVv-UW-iZ9">
+                                <rect key="frame" x="16" y="580" width="343" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.78870457979999997" green="0.83659237190000002" blue="0.90359860749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="groupChatLabel" destination="glx-Sr-jA7" id="72l-jT-NGI"/>
+                        <outlet property="groupChatLabel" destination="IVv-UW-iZ9" id="JCf-el-zLh"/>
                         <outlet property="searchDisplayController" destination="hoa-hp-1Jv" id="6vu-wd-KEI"/>
                         <outlet property="searchTable" destination="79l-ty-Hnf" id="1zz-R7-lEQ"/>
+                        <segue destination="peh-3Z-StQ" kind="show" identifier="segueToGroupChat" id="NaZ-Fr-3nf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPQ-l8-yfM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -375,5 +377,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="JVP-Kf-pWD"/>
+        <segue reference="NaZ-Fr-3nf"/>
     </inferredMetricsTieBreakers>
 </document>

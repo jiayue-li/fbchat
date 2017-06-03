@@ -14,7 +14,8 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
     //instance variables
 
     @IBOutlet weak var searchTable: UITableView!
-    @IBOutlet weak var groupChatLabel: UILabel!
+    @IBOutlet weak var groupChatLabel: UITextView!
+
     var searchController: UISearchController!
 
     var shouldShowSearchResults = false
@@ -73,7 +74,8 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
     func configureSearchController() {
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = true
+        searchController.searchBar.enablesReturnKeyAutomatically = false
+        searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search friends..."
         searchController.searchBar.delegate = self
         searchController.searchBar.sizeToFit()
@@ -98,10 +100,12 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
             groupChatLabel.text = ""
         }else{
             var groupChatLabelText = "Group Chat with "
-            for friend in tempFriendsinChat {
+            for friend in tempFriendsinChat { 
                 groupChatLabelText = groupChatLabelText + friend.name + ", "
             }
-            groupChatLabelText = groupChatLabelText.index(groupChatLabelText.startIndex, offsetBy: groupChatLabelText.characters.count-2)
+            var num = groupChatLabelText.characters.count-2
+            var index = groupChatLabelText.index(groupChatLabelText.startIndex, offsetBy: num)
+            groupChatLabelText = groupChatLabelText.substring(to: index)
             groupChatLabel.text = groupChatLabelText
         }
     }
@@ -124,5 +128,14 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
         shouldShowSearchResults = false
         searchTable.reloadData()
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToGroupChat"{
+        }
+        
+    }
+    @IBAction func startGroupChat(_ sender: Any) {
+    }
+    
 }
 
