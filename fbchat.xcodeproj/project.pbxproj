@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B8471D49CF97BF51BE1C01E6 /* Pods_fbchatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B669B776C1D031C06A2FCB81 /* Pods_fbchatUITests.framework */; };
 		B89652DF37A1C2309683962F /* Pods_fbchatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAB7D4EE11484F9A5519AE8 /* Pods_fbchatTests.framework */; };
+		CF3BB01A1EE28E6300DF8CBC /* chatVCEdited.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF3BB0191EE28E6300DF8CBC /* chatVCEdited.swift */; };
 		CF51BF341EDA592A0074D88A /* chatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51BF331EDA592A0074D88A /* chatViewController.swift */; };
 		CF51BF381EDA5D760074D88A /* chatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51BF371EDA5D760074D88A /* chatCell.swift */; };
 		CF51BF3A1EDA68C50074D88A /* userData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF51BF391EDA68C50074D88A /* userData.swift */; };
@@ -59,6 +60,7 @@
 		9B71FC61023ECD1495D25653 /* Pods-fbchatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fbchatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fbchatUITests/Pods-fbchatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9EAB7D4EE11484F9A5519AE8 /* Pods_fbchatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fbchatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B669B776C1D031C06A2FCB81 /* Pods_fbchatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fbchatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF3BB0191EE28E6300DF8CBC /* chatVCEdited.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatVCEdited.swift; sourceTree = "<group>"; };
 		CF51BF331EDA592A0074D88A /* chatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatViewController.swift; sourceTree = "<group>"; };
 		CF51BF371EDA5D760074D88A /* chatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chatCell.swift; sourceTree = "<group>"; };
 		CF51BF391EDA68C50074D88A /* userData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userData.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				CF51BF371EDA5D760074D88A /* chatCell.swift */,
 				CF51BF391EDA68C50074D88A /* userData.swift */,
 				CF51BF3B1EDA98D60074D88A /* friendCell.swift */,
+				CF3BB0191EE28E6300DF8CBC /* chatVCEdited.swift */,
 			);
 			path = fbchat;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				CF51BF341EDA592A0074D88A /* chatViewController.swift in Sources */,
 				CF51BF3C1EDA98D60074D88A /* friendCell.swift in Sources */,
 				CF51BF3A1EDA68C50074D88A /* userData.swift in Sources */,
+				CF3BB01A1EE28E6300DF8CBC /* chatVCEdited.swift in Sources */,
 				CFD503271ED6038B00BCD1F0 /* ViewController.swift in Sources */,
 				CFD503551ED608ED00BCD1F0 /* SignInViewController.swift in Sources */,
 				CFDC00E31EE0A94C003BA48F /* groupChatSearchViewController.swift in Sources */,
