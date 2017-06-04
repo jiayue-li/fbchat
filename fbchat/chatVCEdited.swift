@@ -191,7 +191,7 @@ class chatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     }
     
     func getUserProfiles(userNames: [String]) -> [UIImage]{
-        
+        print("hi")
         var userProfiles = [UIImage]()
         for userName in userNames{
             if userName == self.userData?.name{
