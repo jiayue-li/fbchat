@@ -131,10 +131,16 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToGroupChat"{
+            if let chatVC = segue.destination as? chatViewController {
+                chatVC.userData = myInfo!
+                chatVC.userFriends = self.tempFriendsinChat
+            }
+
         }
         
     }
     @IBAction func startGroupChat(_ sender: Any) {
+        performSegue(withIdentifier: "segueToGroupChat", sender: nil)
     }
     
 }

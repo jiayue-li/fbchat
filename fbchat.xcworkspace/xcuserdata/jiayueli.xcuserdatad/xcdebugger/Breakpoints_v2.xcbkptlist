@@ -321,102 +321,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "fbchat/chatViewController.swift"
-            timestampString = "517887418.342607"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "addUser(ID:name:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "fbchat/chatViewController.swift"
-            timestampString = "517887420.147743"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "addUser(ID:name:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "fbchat.chatViewController.addUser (ID : Swift.String, name : Swift.String) -&gt; ()"
-                  moduleName = "fbchat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiayueli/Documents/Projects/fbchat/fbchat/chatViewController.swift"
-                  timestampString = "518164649.789729"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "72"
-                  endingLineNumber = "72"
-                  offsetFromSymbolStart = "53">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "fbchat.chatViewController.(addUser (ID : Swift.String, name : Swift.String) -&gt; ()).(closure #1)"
-                  moduleName = "fbchat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jiayueli/Documents/Projects/fbchat/fbchat/chatViewController.swift"
-                  timestampString = "518164649.791692"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "52">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "fbchat/chatViewController.swift"
-            timestampString = "517887425.700114"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "addUser(ID:name:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "fbchat/chatViewController.swift"
-            timestampString = "517887426.912141"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "addUser(ID:name:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -469,7 +373,7 @@
                   moduleName = "fbchat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jiayueli/Documents/Projects/fbchat/fbchat/SignInViewController.swift"
-                  timestampString = "518164649.807925"
+                  timestampString = "518253651.291386"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "74"
@@ -484,7 +388,7 @@
                   moduleName = "fbchat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jiayueli/Documents/Projects/fbchat/fbchat/SignInViewController.swift"
-                  timestampString = "518164649.809423"
+                  timestampString = "518253651.295328"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "76"

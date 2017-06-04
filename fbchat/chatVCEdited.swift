@@ -61,8 +61,8 @@ class chatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     
     
     func setUserIDs(){
-        self.friendName = self.userFriendData?.name as! String
-        self.friendID = self.userFriendData?.id as! String
+//        self.friendName = self.userFriendData?.name as! String
+//        self.friendID = self.userFriendData?.id as! String
         self.userID = self.userData?.id as! String
         self.myName = self.userData?.name as! String
 
@@ -110,10 +110,10 @@ class chatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     
     func send(data: String){
         if data != ""{
-            var userID = userData?.id as! String
-            var userName = userData?.name as! String
-            var friendID = userFriendData?.id as! String
-            var friendName = userFriendData?.id as! String
+//            var userID = userData?.id as! String
+//            var userName = userData?.name as! String
+//            var friendID = userFriendData?.id as! String
+//            var friendName = userFriendData?.id as! String
             //            var userID = "person1"
             //            var userName = "p1"
             //            var friendID = "person2"
@@ -122,12 +122,15 @@ class chatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
             let key = self.ref.child("users").child(userID).child("messages").childByAutoId().key
             
             var message = data
-            let newMessageData = ["userName": userName,
+            let newMessageData = ["userName": self.myName,
                                   "userMessage": message]
             
             
-            self.ref.child("users").child(userID).child("messages").child(friendID).child(key).setValue(newMessageData)
-            self.ref.child("users").child(friendID).child("messages").child(userID).child(key).setValue(newMessageData)
+            self.ref.child("users").child(userID).child("messages").child(messageID).child(key).setValue(newMessageData)
+            for friend in userFriends{
+                self.ref.child("users").child(friend.id).child("messages").child(messageID).child(key).setValue(newMessageData)
+            }
+            
             sendMessageTextBox.text = ""
         }
     }
@@ -191,7 +194,6 @@ class chatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     }
     
     func getUserProfiles(userNames: [String]) -> [UIImage]{
-        print("hi")
         var userProfiles = [UIImage]()
         for userName in userNames{
             if userName == self.userData?.name{
