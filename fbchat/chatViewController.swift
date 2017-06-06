@@ -57,6 +57,7 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         var friendIDs = userFriends.map({(friend)->String in
             return friend.id})
         print(friendIDs)
+        friendIDs.append(userData!.id)
         var sortedIDs = friendIDs.sorted()
         self.messageID = sortedIDs.reduce("", +)
         print(self.messageID)
@@ -159,6 +160,8 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         var nameAndMessages = getUserMessages()
         var userNames = nameAndMessages["userNames"] as! [String]
         var userMessages = nameAndMessages["userMessages"] as! [String]
+        print(userNames)
+        print(userMessages)
         var userProfiles = getUserProfiles(userNames: userNames) as! [UIImage]
         
         cCell.messageName.text = userNames[indexPath.row]
@@ -190,11 +193,20 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func getUserProfiles(userNames: [String]) -> [UIImage]{
         var userProfiles = [UIImage]()
         for userName in userNames{
-            for friend in userFriends{
-                if userName == friend.name {
-                    userProfiles.append(friend.image)
+            print(userName)
+            if userName == userData!.name{
+                userProfiles.append(userData!.image)
+                print("appended \(userData?.name)")
+            }else{
+                for friend in userFriends{
+                    print(friend.name)
+                    if userName == friend.name {
+                        userProfiles.append(friend.image)
+                        print("appended \(friend.name)")
+                    }
                 }
             }
+            print(userProfiles)
         }
         return userProfiles
     }
