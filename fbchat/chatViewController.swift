@@ -35,10 +35,10 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         configureChatLabel()
         generateMessageID()
-//        setUserIDs()
-//        configureDatabase()
-//        addUsers()
-//        updateMessages()
+        setUserIDs()
+        configureDatabase()
+        addUsers()
+        updateMessages()
     }
     
     func configureChatLabel() {
@@ -113,14 +113,6 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func send(data: String){
         if data != ""{
-            //            var userID = userData?.id as! String
-            //            var userName = userData?.name as! String
-            //            var friendID = userFriendData?.id as! String
-            //            var friendName = userFriendData?.id as! String
-            //            var userID = "person1"
-            //            var userName = "p1"
-            //            var friendID = "person2"
-            //            var friendName = "p2"
             
             let key = self.ref.child("users").child(userID).child("messages").childByAutoId().key
             
@@ -128,10 +120,9 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
             let newMessageData = ["userName": self.myName,
                                   "userMessage": message]
             
-            
             self.ref.child("users").child(userID).child("messages").child(messageID).child(key).setValue(newMessageData)
             for friend in userFriends{
-                self.ref.child("users").child(friend.id).child("messages").child(messageID).child(key).setValue(newMessageData)
+            self.ref.child("users").child(friend.id).child("messages").child(messageID).child(key).setValue(newMessageData)
             }
             
             sendMessageTextBox.text = ""
@@ -199,10 +190,10 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func getUserProfiles(userNames: [String]) -> [UIImage]{
         var userProfiles = [UIImage]()
         for userName in userNames{
-            if userName == self.userData?.name{
-                userProfiles.append((self.userData?.image)!)
-            }else{
-                userProfiles.append((self.userFriendData?.image)!)
+            for friend in userFriends{
+                if userName == friend.name {
+                    userProfiles.append(friend.image)
+                }
             }
         }
         return userProfiles

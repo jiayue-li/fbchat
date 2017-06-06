@@ -246,7 +246,7 @@
                                 <state key="normal" title="Add Friends"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fja-C5-EqQ" userLabel="Friend's Name">
-                                <rect key="frame" x="97" y="51" width="180" height="44"/>
+                                <rect key="frame" x="16" y="51" width="343" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -263,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e44-Ci-ctw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1996" y="-246"/>
+            <point key="canvasLocation" x="1996" y="-246.02698650674665"/>
         </scene>
         <!--Group Chat Search View Controller-->
         <scene sceneID="2At-Ze-jsK">

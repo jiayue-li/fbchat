@@ -27,6 +27,7 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        addDummyUser()
         configureSearchController()
         print(friends)
         
@@ -129,6 +130,10 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
         searchTable.reloadData()
     }
 
+    func addDummyUser(){
+        var p1 = friendNode(name: "person1", image: myInfo.image, id: "12345")
+        friends.append(p1)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToGroupChat"{
             if let chatVC = segue.destination as? chatViewController {

@@ -80,7 +80,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     
     func fetchFriendsProfiles(){
         let params = ["fields": "id, first_name, last_name, name, picture"]
-        FBSDKGraphRequest(graphPath: "me/taggable_friends", parameters: params).start(completionHandler: {(connection, result, error) -> Void in
+        FBSDKGraphRequest(graphPath: "me/friends", parameters: params).start(completionHandler: {(connection, result, error) -> Void in
             if error != nil{
                 print(error)
                 return

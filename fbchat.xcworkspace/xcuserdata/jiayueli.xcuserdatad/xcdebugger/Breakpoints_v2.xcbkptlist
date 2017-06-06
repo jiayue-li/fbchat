@@ -373,12 +373,12 @@
                   moduleName = "fbchat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jiayueli/Documents/Projects/fbchat/fbchat/SignInViewController.swift"
-                  timestampString = "518253651.291386"
+                  timestampString = "518422870.689704"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "74"
                   endingLineNumber = "74"
-                  offsetFromSymbolStart = "2621">
+                  offsetFromSymbolStart = "2216">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -388,12 +388,12 @@
                   moduleName = "fbchat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/jiayueli/Documents/Projects/fbchat/fbchat/SignInViewController.swift"
-                  timestampString = "518253651.295328"
+                  timestampString = "518422870.691735"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "76"
                   endingLineNumber = "76"
-                  offsetFromSymbolStart = "16">
+                  offsetFromSymbolStart = "20">
                </Location>
             </Locations>
          </BreakpointContent>
