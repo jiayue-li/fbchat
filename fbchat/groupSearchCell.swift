@@ -36,10 +36,10 @@ class groupSearchCell: UITableViewCell {
     
     func unselect(){
         var tempFriends = self.delegate?.tempFriendsinChat as! [friendNode]
-        if let index = tempFriends.index(of: friendInfo) {
-            tempFriends.remove(at: index)
+        if let index = self.delegate?.tempFriendsinChat.index(of: friendInfo) {
+            self.delegate?.tempFriendsinChat.remove(at: index)
             print("removed \(friendInfo)")
-            print("TempFriends now: \(tempFriends)")
+            print("TempFriends now: \(self.delegate?.tempFriendsinChat)")
             print("hi")
         }
         delegate?.resetGroupLabel()

@@ -98,8 +98,10 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
     
     func resetGroupLabel(){
         if tempFriendsinChat.count == 0 {
+            print(tempFriendsinChat)
             groupChatLabel.text = ""
         }else{
+            print(tempFriendsinChat)
             var groupChatLabelText = "Group Chat with "
             for friend in tempFriendsinChat { 
                 groupChatLabelText = groupChatLabelText + friend.name + ", "
