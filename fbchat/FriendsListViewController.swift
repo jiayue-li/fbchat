@@ -156,7 +156,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
         if segue.identifier == "seguetoChat" {
             if let chatVC = segue.destination as? chatViewController {
                 chatVC.userData = myInfo!
-                chatVC.userFriendData = self.tempFriendInfo!
+                chatVC.userFriends.append(self.tempFriendInfo!)
             }
         }
         

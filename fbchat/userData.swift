@@ -18,8 +18,12 @@ struct userChatData{
     var friendPhotoURL: String
 }
 
-struct friendNode {
+struct friendNode:Equatable {
     var name:String
     var image:UIImage
     var id:String
+    
+    static func == (lhs: friendNode, rhs: friendNode) -> Bool {
+        return lhs.id == rhs.id
+    }
 }
