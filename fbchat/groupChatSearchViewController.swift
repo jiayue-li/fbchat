@@ -147,7 +147,9 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
         
     }
     @IBAction func startGroupChat(_ sender: Any) {
-        performSegue(withIdentifier: "segueToGroupChat", sender: nil)
+        if tempFriendsinChat.count > 0{
+            performSegue(withIdentifier: "segueToGroupChat", sender: nil)
+        }
     }
     
 }
