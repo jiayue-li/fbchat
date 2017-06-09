@@ -12,14 +12,17 @@ import FBSDKLoginKit
 import FBSDKCoreKit
 
 
-class FriendsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ChangeViewProtocol {
+class FriendsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ChangeViewProtocol, UISearchResultsUpdating, UISearchBarDelegate{
     
     @IBOutlet weak var friendsTable: UITableView!
     @IBOutlet weak var username: UILabel!
     
     var friends = [friendNode]()
+    var filteredFriends = [friendNode]()
     var myInfo: friendNode?
     var tempFriendInfo: friendNode?
+    var searchController: UISearchController!
+    var shouldShowSearchResults = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +32,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
 //            print("friendslistviewloaded")
             fetchProfile()
             fetchFriendsProfiles()
+            configureSearchController()
             self.friendsTable.reloadData()
             
         }else{
@@ -36,18 +40,52 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    func configureSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.enablesReturnKeyAutomatically = false
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search friends..."
+        searchController.searchBar.delegate = self
+        searchController.searchBar.sizeToFit()
+        friendsTable.tableHeaderView = searchController.searchBar
+        
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchText = searchController.searchBar.text
+        
+        self.filteredFriends = friends.filter({ (friend) -> Bool in
+            let friendName: NSString = friend.name as NSString
+            return (friendName.range(of: searchText!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
+        })
+        
+        friendsTable.reloadData()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        shouldShowSearchResults = true
+        friendsTable.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if !shouldShowSearchResults{
+            shouldShowSearchResults = true
+            friendsTable.reloadData()
+        }
+        searchController.searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar){
+        shouldShowSearchResults = false
+        friendsTable.reloadData()
+    }
+
+    
     @IBAction func backToSI(_ sender: Any) {
         self.performSegue(withIdentifier: "segueBack", sender: nil)
     }
     
-    @IBAction func signOut(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-    }
     
     func fetchProfile(){
         //        print("fetching profile.....")
@@ -114,7 +152,11 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return friends.count
+        if shouldShowSearchResults{
+            return self.filteredFriends.count
+        }else{
+            return self.friends.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -123,23 +165,40 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
         
         friendCell.delegate = self
         
-        var userNames = [String]()
-        var userID = [String]()
-        var userPicURLs = [String]()
-        
-        
+//        var userNames = [String]()
+//        var userID = [String]()
+//        var userPicURLs = [String]()
+//        
+//        
+//        var friendNames = [String]()
+//        var friendPics = [UIImage]()
+//        
+//        let friendsList = self.friends as [friendNode]
+//        
+//        for fNode in self.friends {
+//            friendNames.append(fNode.name as String)
+//            friendPics.append(fNode.image as UIImage)
+//        }
+//        
+//        friendCell.userNode = myInfo
+//        friendCell.userFriendNode = friends[indexPath.row]
+//        friendCell.username.text = friendNames[indexPath.row]
+//        friendCell.userPic.image = friendPics[indexPath.row]
         var friendNames = [String]()
         var friendPics = [UIImage]()
-        
-        let friendsList = self.friends as [friendNode]
-        
-        for fNode in self.friends {
-            friendNames.append(fNode.name as String)
-            friendPics.append(fNode.image as UIImage)
+        if shouldShowSearchResults {
+            friendNames = filteredFriends.map({(friend)->String in
+                return friend.name})
+            friendPics = filteredFriends.map({(friend)->UIImage in
+                return friend.image})
+            friendCell.userNode = filteredFriends[indexPath.row]
+        }else {
+            friendNames = friends.map({(friend)->String in
+                return friend.name})
+            friendPics = friends.map({(friend)->UIImage in
+                return friend.image})
+            friendCell.userNode = friends[indexPath.row]
         }
-        
-        friendCell.userNode = myInfo
-        friendCell.userFriendNode = friends[indexPath.row]
         friendCell.username.text = friendNames[indexPath.row]
         friendCell.userPic.image = friendPics[indexPath.row]
         friendCell.backgroundColor = UIColor.clear

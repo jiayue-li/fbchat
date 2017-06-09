@@ -115,7 +115,6 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         shouldShowSearchResults = true
-        print("editing....")
         searchTable.reloadData()
     }
     
