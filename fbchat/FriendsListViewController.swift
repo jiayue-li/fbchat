@@ -191,14 +191,16 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
                 return friend.name})
             friendPics = filteredFriends.map({(friend)->UIImage in
                 return friend.image})
-            friendCell.userNode = filteredFriends[indexPath.row]
+            friendCell.userFriendNode = filteredFriends[indexPath.row]
+            
         }else {
             friendNames = friends.map({(friend)->String in
                 return friend.name})
             friendPics = friends.map({(friend)->UIImage in
                 return friend.image})
-            friendCell.userNode = friends[indexPath.row]
+            friendCell.userFriendNode = friends[indexPath.row]
         }
+        friendCell.userNode = myInfo
         friendCell.username.text = friendNames[indexPath.row]
         friendCell.userPic.image = friendPics[indexPath.row]
         friendCell.backgroundColor = UIColor.clear
