@@ -12,7 +12,8 @@ import Firebase
 class chatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var chatTable: UITableView!
-    @IBOutlet weak var chatWithLabel: UILabel!
+//    @IBOutlet weak var chatWithLabel: UILabel!
+    @IBOutlet weak var chatWithLabel: UITextView!
     @IBOutlet weak var sendMessageTextBox: UITextField!
     var ref: DatabaseReference!
     fileprivate var _refHandle: DatabaseHandle!
@@ -59,11 +60,7 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.messageID = sortedIDs.reduce("", +)
         print(self.messageID)
     }
-    
-//    func setUserIDs(){
-//        self.userID = self.userData?.id as! String
-//        self.myName = self.userData?.name as! String
-//    }
+
 
     func configureDatabase() {
         ref = Database.database().reference()

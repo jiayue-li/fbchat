@@ -164,26 +164,8 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
         var friendCell = tableView.dequeueReusableCell(withIdentifier: "friendCell") as! myTableCell
         
         friendCell.delegate = self
+        friendCell.userNode = myInfo
         
-//        var userNames = [String]()
-//        var userID = [String]()
-//        var userPicURLs = [String]()
-//        
-//        
-//        var friendNames = [String]()
-//        var friendPics = [UIImage]()
-//        
-//        let friendsList = self.friends as [friendNode]
-//        
-//        for fNode in self.friends {
-//            friendNames.append(fNode.name as String)
-//            friendPics.append(fNode.image as UIImage)
-//        }
-//        
-//        friendCell.userNode = myInfo
-//        friendCell.userFriendNode = friends[indexPath.row]
-//        friendCell.username.text = friendNames[indexPath.row]
-//        friendCell.userPic.image = friendPics[indexPath.row]
         var friendNames = [String]()
         var friendPics = [UIImage]()
         if shouldShowSearchResults {
