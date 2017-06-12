@@ -9,15 +9,6 @@
 import Foundation
 import UIKit
 
-struct userChatData{
-    var userName: String
-    var userID: String
-    var userPhotoURL: String
-    var friendName: String
-    var friendID: String
-    var friendPhotoURL: String
-}
-
 struct friendNode:Equatable {
     var name:String
     var image:UIImage

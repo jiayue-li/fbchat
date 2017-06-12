@@ -20,22 +20,29 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
 
     var shouldShowSearchResults = false
     var friends = [friendNode]()
-    var filteredFriends = [friendNode]()
+    var groupFriendNodes = [groupSearchCellInfo]()
+    var filteredFriends = [groupSearchCellInfo]()
     var myInfo: friendNode!
     var tempFriendsinChat = [friendNode]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        addDummyUser()
+//        addDummyUser()
+        createSearchNodes()
         configureSearchController()
-        print(friends)
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func createSearchNodes() {
+        for friend in friends{
+            var node = groupSearchCellInfo(node: friend, selected: false)
+            groupFriendNodes.append(node)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,19 +62,20 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
         var friendPics = [UIImage]()
         if shouldShowSearchResults {
             friendNames = filteredFriends.map({(friend)->String in
-                return friend.name})
+                return friend.node.name})
             friendPics = filteredFriends.map({(friend)->UIImage in
-                return friend.image})
-            friendCell.friendInfo = filteredFriends[indexPath.row]
+                return friend.node.image})
+            friendCell.cellInfo = filteredFriends[indexPath.row]
         }else {
-            friendNames = friends.map({(friend)->String in
-                return friend.name})
-            friendPics = friends.map({(friend)->UIImage in
-                return friend.image})
-            friendCell.friendInfo = friends[indexPath.row]
+            friendNames = groupFriendNodes.map({(friend)->String in
+                return friend.node.name})
+            friendPics = groupFriendNodes.map({(friend)->UIImage in
+                return friend.node.image})
+            friendCell.cellInfo = groupFriendNodes[indexPath.row]
         }
         friendCell.userName.text = friendNames[indexPath.row]
         friendCell.userPic.image = friendPics[indexPath.row]
+        friendCell.configureSelectButton()
         
         return friendCell
     }
@@ -81,15 +89,14 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
         searchController.searchBar.delegate = self
         searchController.searchBar.sizeToFit()
         searchTable.tableHeaderView = searchController.searchBar
-
     }
     
     func updateSearchResults(for searchController: UISearchController) {
         
         let searchText = searchController.searchBar.text
         
-        self.filteredFriends = friends.filter({ (friend) -> Bool in
-            let friendName: NSString = friend.name as NSString
+        self.filteredFriends = groupFriendNodes.filter({ (friend) -> Bool in
+            let friendName: NSString = friend.node.name as NSString
             return (friendName.range(of: searchText!, options: NSString.CompareOptions.caseInsensitive).location) != NSNotFound
             })
         
@@ -98,7 +105,6 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
     
     func resetGroupLabel(){
         if tempFriendsinChat.count == 0 {
-            print(tempFriendsinChat)
             groupChatLabel.text = ""
         }else{
             print(tempFriendsinChat)
@@ -135,6 +141,7 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
         var p1 = friendNode(name: "person1", image: myInfo.image, id: "12345")
         friends.append(p1)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToGroupChat"{
             if let chatVC = segue.destination as? chatViewController {

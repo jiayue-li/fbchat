@@ -98,9 +98,9 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             guard let resultMe = result as? [String:Any] else {
                 return
             }
-            
-            print(resultMe)
-            var myName = resultMe["name"] as? String
+            var firstName = resultMe["first_name"] as! String
+            var lastName = resultMe["last_name"] as! String
+            var myName = firstName + " " + lastName
             var myID = resultMe["id"] as? String
             
             var userPicture = resultMe["picture"] as? [String: Any]
@@ -111,7 +111,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             let userImage = UIImage(data: data!) as! UIImage
             var myPicURL = resultMe["picture"] as? String
             
-            self.myInfo = friendNode(name: myName!, image: userImage, id: myID!)
+            self.myInfo = friendNode(name: myName, image: userImage, id: myID!)
         })
         
     }
@@ -131,8 +131,10 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             for userNode in data {
                 guard let user = userNode as? [String:Any] else {
                     return}
-                var userName = user["name"] as? String
-                //                self.friends.append(userName!)
+                
+                var firstName = user["first_name"] as! String
+                var lastName = user["last_name"] as! String
+                var userName = firstName + " " + lastName
                 
                 var userPicture = user["picture"] as? [String: Any]
                 var userPicData = userPicture?["data"] as? [String: Any]
@@ -143,7 +145,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 var userID = user["id"] as? String
                 
-                let friendStruct = friendNode(name: userName!, image: userImage, id: userID!)
+                let friendStruct = friendNode(name: userName, image: userImage, id: userID!)
                 
                 self.friends.append(friendStruct)
             }
@@ -200,6 +202,7 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             if let chatVC = segue.destination as? chatViewController {
                 chatVC.userData = myInfo!
                 chatVC.userFriends.append(self.tempFriendInfo!)
+
             }
         }
         
@@ -207,6 +210,11 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             if let groupSearch = segue.destination as? groupChatSearchViewController {
                 groupSearch.friends = self.friends
                 groupSearch.myInfo = self.myInfo!
+                
+                print("my Name is: \(groupSearch.myInfo.name)")
+                for friend in groupSearch.friends{
+                    print("my friend's name is: \(friend.name)")
+                }
             }
         }
     }

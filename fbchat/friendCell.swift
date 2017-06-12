@@ -38,18 +38,10 @@ class myTableCell: UITableViewCell{
     }
     
     @IBAction func startChat(_ sender: Any) {
-        print("presenting...")
         presentDestinationViewController()
     }
     
     func presentDestinationViewController() {
-//        let chatVC = chatViewController(userData: self.userNode!, userFriendData: self.userFriendNode!)
-//        chatVC.userData = self.userNode
-//        chatVC.userFriendData = self.userFriendNode
-//        delegate?.loadNewScreen(controller: chatVC)
-        print("delegate: \(delegate)")
-        print(self.userNode)
-        print(self.userFriendNode)
         delegate?.openChat(userData: self.userNode!, userFriendData: self.userFriendNode!)
     }
 }

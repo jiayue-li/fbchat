@@ -29,9 +29,9 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("userDAta NAME: \(userData.name)")
         configureChatLabel()
         generateMessageID()
-//        setUserIDs()
         configureDatabase()
         addUsers()
         updateMessages()
@@ -47,14 +47,12 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         var index = chatWithLabelText.index(chatWithLabelText.startIndex, offsetBy: num)
         chatWithLabelText = chatWithLabelText.substring(to: index)
         chatWithLabel.text = chatWithLabelText
-        print(chatWithLabelText)
     }
     
     //generates a unique message ID based on the IDs of all users in chat
     func generateMessageID(){
         var friendIDs = userFriends.map({(friend)->String in
             return friend.id})
-        print(friendIDs)
         friendIDs.append(userData!.id)
         var sortedIDs = friendIDs.sorted()
         self.messageID = sortedIDs.reduce("", +)
@@ -93,8 +91,6 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func updateMessages(){
         _refHandle = self.ref.child("users").child(userData.id).child("messages").child(messageID).observe(.childAdded, with: {[weak self] (snapshot) -> Void in guard let strongSelf = self else { return }
             if(snapshot.exists()){
-                //            print(snapshot)
-                //            print("new message : \(snapshot.value!)")
                 let messageNodeDict = snapshot.value as! [String: String]
                 self?.allMessages.append(messageNodeDict)
                 self?.chatTable.reloadData()
@@ -108,7 +104,8 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
             let key = self.ref.child("users").child(userData.id).child("messages").childByAutoId().key
             var message = data
             let newMessageData = ["userName": userData.name,
-                                  "userMessage": message]
+                                  "userMessage": message,
+                                "userID": userData.id]
             self.ref.child("users").child(userData.id).child("messages").child(messageID).child(key).setValue(newMessageData)
             for friend in userFriends{
             self.ref.child("users").child(friend.id).child("messages").child(messageID).child(key).setValue(newMessageData)
@@ -148,9 +145,9 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         var nameAndMessages = getUserMessages()
         var userNames = nameAndMessages["userNames"] as! [String]
         var userMessages = nameAndMessages["userMessages"] as! [String]
-        print(userNames)
-        print(userMessages)
-        var userProfiles = getUserProfiles(userNames: userNames) as! [UIImage]
+        var userIDs = nameAndMessages["userIDs"] as! [String]
+
+        var userProfiles = getUserProfiles(userIDs: userIDs) as! [UIImage]
         
         cCell.messageName.text = userNames[indexPath.row]
         cCell.messageText.text = userMessages[indexPath.row]
@@ -165,38 +162,36 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         var userNames = [String]()
         var userMessages = [String]()
+        var userIDs = [String]()
         
         let messageList = self.allMessages as [[String:String]]
         
         for message in self.allMessages{
             userNames.append(message["userName"]!)
             userMessages.append(message["userMessage"]!)
+            userIDs.append(message["userID"]!)
         }
         
         var nameAndMessages = ["userNames": userNames as [String],
-                               "userMessages": userMessages as [String]
+                               "userMessages": userMessages as [String],
+                               "userIDs": userIDs as [String]
         ]
         return nameAndMessages
     }
     
-    //helper method unpacks messages into an array of profile pictures to display in the chat
-    func getUserProfiles(userNames: [String]) -> [UIImage]{
+    //helper method unpacks messages into an array of profile pictures to display in the chat using userIDs
+    func getUserProfiles(userIDs: [String]) -> [UIImage]{
         var userProfiles = [UIImage]()
-        for userName in userNames{
-            print(userName)
-            if userName == userData!.name{
+        for userID in userIDs{
+            if userID == userData!.id{
                 userProfiles.append(userData!.image)
-                print("appended \(userData?.name)")
             }else{
                 for friend in userFriends{
-                    print(friend.name)
-                    if userName == friend.name {
+                    if userID == friend.id {
                         userProfiles.append(friend.image)
-                        print("appended \(friend.name)")
                     }
                 }
             }
-            print(userProfiles)
         }
         return userProfiles
     }
@@ -208,10 +203,5 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.ref.child("users").child(userID).setValue(newUserData)
         
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        chatTable.reloadData()
-//    }
-
     
 }
