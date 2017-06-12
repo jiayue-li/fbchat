@@ -50,7 +50,6 @@ class SignInViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hi")
 //        if (!SignInViewController.isAlreadyLaunchedOnce){
 //            print("configuring...")
 //            FirebaseApp.configure()

@@ -107,7 +107,6 @@ class groupChatSearchViewController: UIViewController, UITableViewDataSource, UI
         if tempFriendsinChat.count == 0 {
             groupChatLabel.text = ""
         }else{
-            print(tempFriendsinChat)
             var groupChatLabelText = "Group Chat with "
             for friend in tempFriendsinChat { 
                 groupChatLabelText = groupChatLabelText + friend.name + ", "

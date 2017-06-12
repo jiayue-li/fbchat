@@ -29,7 +29,6 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("userDAta NAME: \(userData.name)")
         configureChatLabel()
         generateMessageID()
         configureDatabase()
@@ -56,7 +55,6 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
         friendIDs.append(userData!.id)
         var sortedIDs = friendIDs.sorted()
         self.messageID = sortedIDs.reduce("", +)
-        print(self.messageID)
     }
 
 
@@ -89,7 +87,6 @@ class chatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Listen for new messages in the Firebase database, and update the chat accordingly
     func updateMessages(){
-        print(messageID)
         _refHandle = self.ref.child("users").child(userData.id).child("messages").child(messageID).observe(.childAdded, with: {[weak self] (snapshot) -> Void in guard let strongSelf = self else { return }
             if(snapshot.exists()){
                 let messageNodeDict = snapshot.value as! [String: String]

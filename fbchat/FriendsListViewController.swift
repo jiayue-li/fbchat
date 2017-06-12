@@ -210,11 +210,6 @@ class FriendsListViewController: UIViewController, UITableViewDelegate, UITableV
             if let groupSearch = segue.destination as? groupChatSearchViewController {
                 groupSearch.friends = self.friends
                 groupSearch.myInfo = self.myInfo!
-                
-                print("my Name is: \(groupSearch.myInfo.name)")
-                for friend in groupSearch.friends{
-                    print("my friend's name is: \(friend.name)")
-                }
             }
         }
     }
